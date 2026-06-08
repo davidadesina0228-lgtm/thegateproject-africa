@@ -3,15 +3,99 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/hooks/useAuth";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "The Gate Project | Connecting African Talent with Western Opportunities",
-  description: "A structured talent development and internship pipeline connecting African learners and skilled interns with Western companies seeking meaningful social impact and trained digital talent.",
-  keywords: ["internship", "talent development", "Africa", "UK", "career", "opportunity", "training"],
+  metadataBase: new URL("https://thegateproject.africa"),
+  title: {
+    default: "The Gate Project | Africa's AI Talent Pipeline",
+    template: "%s | The Gate Project",
+  },
+  description:
+    "The Gate Project is a 6-week AI training and placement programme connecting African professionals with Western companies. Cohort 1: 100% placement rate. 5 graduates. 3 countries. Apply for Cohort 2.",
+  keywords: [
+    "African AI talent",
+    "AI training programme Africa",
+    "internship pipeline Africa UK",
+    "GEO training Africa",
+    "n8n automation Africa",
+    "African professionals Western companies",
+    "AI automation course Nigeria",
+    "generative engine optimization",
+    "talent development Africa",
+    "The Gate Project",
+    "David Adesina",
+    "Dean Whitby",
+  ],
+  authors: [{ name: "The Gate Project" }],
+  creator: "The Gate Project",
+  publisher: "The Gate Project",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://thegateproject.africa",
+    siteName: "The Gate Project",
+    title: "The Gate Project | Africa's AI Talent Pipeline",
+    description:
+      "6 weeks. Real AI skills. 100% placement rate. The Gate Project trains African professionals and places them in Western companies.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "The Gate Project — Africa's AI Talent Pipeline",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Gate Project | Africa's AI Talent Pipeline",
+    description:
+      "6 weeks. Real AI skills. 100% placement rate. Train here. Work anywhere.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://thegateproject.africa",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "The Gate Project",
+  url: "https://thegateproject.africa",
+  description:
+    "The Gate Project is a 6-week AI talent development and internship placement programme that connects African professionals with Western companies. Founded by David Adesina and Dean Whitby.",
+  foundingDate: "2025",
+  founders: [
+    { "@type": "Person", name: "David Adesina" },
+    { "@type": "Person", name: "Dean Whitby" },
+  ],
+  areaServed: ["Africa", "Nigeria", "United Kingdom", "United States", "Europe"],
+  knowsAbout: [
+    "AI Automation",
+    "Generative Engine Optimization",
+    "n8n workflow engineering",
+    "LinkedIn Authority Marketing",
+    "Answer Engine Optimization",
+    "Talent Development",
+  ],
+  sameAs: ["https://thegateproject.africa"],
 };
 
 export default function RootLayout({
@@ -21,10 +105,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${inter.variable} font-sans antialiased bg-background text-foreground`}>
-        <AuthProvider>
-          {children}
-        </AuthProvider>
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );

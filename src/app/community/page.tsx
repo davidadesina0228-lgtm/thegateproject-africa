@@ -1,8 +1,8 @@
 "use client";
 
-import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
@@ -17,7 +17,9 @@ import {
 } from "lucide-react";
 
 export default function CommunityPage() {
-  const { data: session, status } = useSession();
+  const { user, loading } = useAuth();
+  const session = user;
+  const status = loading ? "loading" : user ? "authenticated" : "unauthenticated";
   const router = useRouter();
   const [posts, setPosts] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);

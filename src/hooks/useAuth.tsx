@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, createContext, useContext, ReactNode } from 'react';
+import type { Session, AuthChangeEvent } from '@supabase/supabase-js';
 import { User, Profile, supabase } from '@/lib/supabase';
 import { useRouter } from 'next/navigation';
 
@@ -29,7 +30,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
 
     // Check active session
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(({ data: { session } }: { data: { session: Session | null } }) => {
       if (session?.user) {
         fetchUserData(session.user.id);
       } else {
@@ -38,7 +39,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     });
 
     // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event: AuthChangeEvent, session: Session | null) => {
       if (session?.user) {
         fetchUserData(session.user.id);
       } else {
