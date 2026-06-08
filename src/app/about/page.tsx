@@ -80,7 +80,7 @@ export default function AboutPage() {
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-gold/10 border border-gold/25 rounded-full text-gold text-xs font-semibold tracking-widest uppercase mb-8">
               Built for African talent
             </span>
-            <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight mb-8">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black leading-tight tracking-tight mb-8">
               We Built The Gate Because We Knew The Talent Was There
             </h1>
             <p className="text-lg md:text-2xl text-secondary leading-relaxed max-w-3xl mx-auto">

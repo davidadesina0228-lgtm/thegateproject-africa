@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, Zap, Globe, Shield, Award } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { SiteNav } from "@/components/marketing/SiteNav";
 
 const fadeUp = {
   initial: { opacity: 0, y: 40 },
@@ -103,30 +104,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-background overflow-x-hidden">
 
-      {/* ── Navigation ── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border/60">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-9 h-9 bg-gradient-to-br from-gold to-gold-dark rounded-lg flex items-center justify-center shadow-lg shadow-gold/20">
-                <span className="text-black font-black text-lg">G</span>
-              </div>
-              <span className="text-white font-bold text-lg tracking-tight">The Gate Project</span>
-            </Link>
-            <div className="hidden md:flex items-center gap-10">
-              <Link href="/about" className="text-secondary hover:text-white text-sm font-medium transition-colors">About</Link>
-              <Link href="/alumni" className="text-secondary hover:text-white text-sm font-medium transition-colors">Alumni</Link>
-              <Link href="/blog" className="text-secondary hover:text-white text-sm font-medium transition-colors">Blog</Link>
-              <Link
-                href="/apply"
-                className="bg-gold hover:bg-gold-light text-black text-sm font-bold px-5 py-2.5 rounded-lg transition-colors shadow-lg shadow-gold/20"
-              >
-                Apply Now
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <SiteNav />
 
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
@@ -164,9 +142,9 @@ export default function HomePage() {
               variants={fadeUp}
               className="text-lg sm:text-xl md:text-2xl text-secondary max-w-3xl mx-auto mb-12 leading-relaxed"
             >
-              The Gate Project is the world&apos;s most focused AI talent pipeline — a 6-week
+              The Gate Project is Africa&apos;s most focused AI talent pipeline — a 6-week
               program that has placed{" "}
-              <span className="text-white font-semibold">100% of its graduates</span>{" "}
+              <span className="text-white font-semibold">5 of its 6 graduates</span>{" "}
               into real, paid roles at Western companies.
             </motion.p>
 
@@ -242,7 +220,7 @@ export default function HomePage() {
                   "Skills taught by practitioners, not academics",
                   "Portfolio of real deliverables — not just a certificate",
                   "Direct introductions to Western companies",
-                  "Cohort 1: 100% placement rate",
+                  "Cohort 1: 83% placement rate (5 of 6 placed)",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-gold flex-shrink-0" />
@@ -257,7 +235,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
               {skills.map((skill, i) => (
                 <motion.div
