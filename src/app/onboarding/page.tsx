@@ -51,7 +51,7 @@ export default function OnboardingPage() {
     }
   }, [user, router]);
 
-  const steps = userType === "INTERN" ? internSteps : learnerSteps;
+  const steps = userType === "intern" ? internSteps : learnerSteps;
 
   const handleNext = () => {
     if (currentStep < steps.length - 1) {
