@@ -18,7 +18,7 @@ const founders = [
     name: "David Adesina",
     role: "Co-Founder & AI Automation Lead",
     photo: "/founders/david.jpg",
-    bio: "David trains learners in AI automation, n8n workflow engineering, Claude API, chatbots, and voice agents. He has placed multiple African professionals into Western roles by teaching the practical systems companies already need.",
+    bio: "David trains learners in AI automation, n8n workflow engineering, Claude API, chatbots, and voice agents. The Gate Project's pipeline then connects those trained professionals directly to Western companies that need exactly those skills.",
     tags: ["AI Automation", "n8n", "Claude API", "Voice Agents"],
   },
   {
@@ -55,8 +55,8 @@ const teachingAreas = [
 ];
 
 const results = [
-  { value: "100%", label: "Placement Rate" },
-  { value: "5/5", label: "Graduates Placed" },
+  { value: "83%", label: "Placement Rate" },
+  { value: "5 of 6", label: "Graduates Placed" },
   { value: "3", label: "Countries" },
 ];
 
@@ -251,8 +251,8 @@ export default function AboutPage() {
               Cohort 1 proved the model.
             </h2>
             <p className="text-secondary text-lg leading-relaxed">
-              Five graduates completed the first cohort. Every graduate secured placement,
-              across three countries and multiple AI-first roles.
+              Six professionals enrolled in the first cohort, which began training on March 2nd, 2025.
+              Five graduated and were placed across three countries in real AI-first roles.
             </p>
           </motion.div>
           <motion.div

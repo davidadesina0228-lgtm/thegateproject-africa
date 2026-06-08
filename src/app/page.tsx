@@ -16,8 +16,8 @@ const stagger = {
 };
 
 const stats = [
-  { number: "100%", label: "Placement Rate", sub: "Cohort 1" },
-  { number: "5/5", label: "Graduates Placed", sub: "in real paid roles" },
+  { number: "83%", label: "Placement Rate", sub: "5 of 6 participants placed" },
+  { number: "5", label: "Graduates Placed", sub: "in real paid roles" },
   { number: "6", label: "Weeks", sub: "to career transformation" },
   { number: "3", label: "Countries", sub: "Nigeria · Georgia · UK" },
 ];
@@ -87,7 +87,7 @@ const founders = [
     name: "David Adesina",
     photo: "/founders/david.jpg",
     role: "Co-Founder · AI Automation Lead",
-    bio: "David trains learners in AI automation, n8n workflow engineering, and practical AI tooling. He has placed multiple African professionals into Western roles and understands, at a technical level, exactly what companies need.",
+    bio: "David trains learners in AI automation, n8n workflow engineering, and practical AI tooling. The Gate Project's pipeline then connects those trained professionals directly to Western companies that need exactly those skills.",
     focus: ["AI Automation", "n8n & Workflow Engineering", "Talent Pipeline"],
   },
   {
