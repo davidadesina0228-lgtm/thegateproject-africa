@@ -85,12 +85,14 @@ const featuredAlumni = [
 const founders = [
   {
     name: "David Adesina",
+    photo: "/founders/david.jpg",
     role: "Co-Founder · AI Automation Lead",
     bio: "David trains learners in AI automation, n8n workflow engineering, and practical AI tooling. He has placed multiple African professionals into Western roles and understands, at a technical level, exactly what companies need.",
     focus: ["AI Automation", "n8n & Workflow Engineering", "Talent Pipeline"],
   },
   {
     name: "Dean Whitby",
+    photo: "/founders/dean.jpg",
     role: "Co-Founder · GEO & Lead Generation Lead",
     bio: "Dean brings deep expertise in Generative Engine Optimization, lead generation strategy, and content that ranks in AI-powered search. He ensures every Gate Project graduate can operate in the emerging AI-first marketing landscape.",
     focus: ["GEO & AEO Strategy", "Lead Generation", "Blog & Content Systems"],
@@ -516,8 +518,14 @@ export default function HomePage() {
                 transition={{ delay: i * 0.15, duration: 0.7 }}
                 className="bg-surface border border-border rounded-2xl p-8 hover:border-gold/30 transition-colors"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-gold/20 to-gold/5 rounded-2xl flex items-center justify-center mb-6 border border-gold/20">
-                  <span className="text-gold font-black text-2xl">{founder.name[0]}</span>
+                <div className="relative w-24 h-24 rounded-full overflow-hidden mb-6 border-2 border-gold/30 shadow-xl shadow-gold/10 bg-background">
+                  <Image
+                    src={founder.photo}
+                    alt={`${founder.name}, ${founder.role}`}
+                    fill
+                    className="object-cover"
+                    sizes="96px"
+                  />
                 </div>
                 <h3 className="text-white font-black text-xl mb-1">{founder.name}</h3>
                 <p className="text-gold text-xs font-semibold tracking-wide mb-5">{founder.role}</p>

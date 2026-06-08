@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, Building2, ExternalLink } from "lucide-react";
+import { SiteFooter } from "@/components/marketing/SiteFooter";
+import { SiteNav } from "@/components/marketing/SiteNav";
 
 const graduates = [
   {
@@ -89,26 +91,7 @@ const stats = [
 export default function AlumniPage() {
   return (
     <main className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="container-gate">
-          <div className="flex items-center justify-between h-20">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-gold to-gold-dark rounded-lg flex items-center justify-center">
-                <span className="text-black font-bold text-xl">G</span>
-              </div>
-              <span className="text-xl font-bold text-white">The Gate Project</span>
-            </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/#mission" className="text-secondary hover:text-gold transition-colors">Mission</Link>
-              <Link href="/#pathways" className="text-secondary hover:text-gold transition-colors">Pathways</Link>
-              <Link href="/alumni" className="text-gold font-medium">Alumni</Link>
-              <Link href="/auth/login" className="btn-secondary text-sm py-2 px-4">Sign In</Link>
-              <Link href="/auth/signup" className="btn-primary text-sm py-2 px-4">Get Started</Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <SiteNav />
 
       {/* Hero */}
       <section className="relative pt-40 pb-24 overflow-hidden">
@@ -281,11 +264,11 @@ export default function AlumniPage() {
               The only thing that changed was stepping through the gate.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/auth/signup?type=learner" className="btn-primary flex items-center gap-2 text-lg px-8 py-4">
+              <Link href="/apply?track=learner" className="btn-primary flex items-center gap-2 text-lg px-8 py-4">
                 Apply as a Learner
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link href="/auth/signup?type=intern" className="btn-secondary flex items-center gap-2 text-lg px-8 py-4">
+              <Link href="/apply?track=intern" className="btn-secondary flex items-center gap-2 text-lg px-8 py-4">
                 Apply as an Intern
               </Link>
             </div>
@@ -294,7 +277,7 @@ export default function AlumniPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-10">
+      <footer className="hidden">
         <div className="container-gate flex flex-col md:flex-row justify-between items-center gap-4">
           <Link href="/" className="flex items-center gap-3">
             <div className="w-8 h-8 bg-gradient-to-br from-gold to-gold-dark rounded-lg flex items-center justify-center">
@@ -311,6 +294,7 @@ export default function AlumniPage() {
           </div>
         </div>
       </footer>
+      <SiteFooter />
     </main>
   );
 }
