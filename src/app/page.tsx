@@ -486,7 +486,7 @@ export default function HomePage() {
                     Can&apos;t Wait for a Cohort?
                   </h3>
                   <p className="text-secondary text-sm leading-relaxed mb-4">
-                    Start this week with personal 1-on-1 mentorship from David and Dean. Same skills.
+                    Start this week with personal mentorship from David and Dean. Same skills.
                     Same goal. No waiting list.
                   </p>
                   <ul className="space-y-2">

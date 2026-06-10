@@ -18,7 +18,7 @@ import {
 import { SiteFooter } from "@/components/marketing/SiteFooter";
 import { SiteNav } from "@/components/marketing/SiteNav";
 
-const TELEGRAM_LINK = "https://t.me/+G8gswKDxW4hmOWZi";
+const TELEGRAM_LINK = "https://t.me/Thegateprojectafrica";
 
 type MentorshipEnquiry = {
   fullName: string;
@@ -64,7 +64,7 @@ const steps = [
   {
     number: "01",
     title: "Join the Telegram Group",
-    desc: 'Click the button below to join our Cohort 2 interest group. Once inside, type "Intern" if you have existing skills, or "Skilled" if you are experienced — and we will reach out to you.',
+    desc: 'Click the button below to join our group. Type "Intern" if you are applying for the free scholarship, or "Training" if you want to skip the cohort and go straight into the paid mentorship track. We will reach out to you.',
   },
   {
     number: "02",
@@ -80,7 +80,7 @@ const steps = [
 
 const paidFeatures = [
   { icon: Zap, text: "Start this week — no cohort waitlist, no application queue" },
-  { icon: Star, text: "Personal 1-on-1 mentorship directly from David Adesina and Dean Whitby" },
+  { icon: Star, text: "Personal mentorship directly from David Adesina and Dean Whitby" },
   { icon: CheckCircle, text: "The exact AI automation, GEO, and n8n skills Cohort 1 graduates are being hired for" },
   { icon: CheckCircle, text: "Taught by the founders — these are the same skills they use to earn" },
   { icon: CheckCircle, text: "Placement is our goal for every mentee — no guarantee, but it is the mission" },
