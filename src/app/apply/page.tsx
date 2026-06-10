@@ -1,7 +1,7 @@
 "use client";
 
 import type { ChangeEvent, FormEvent } from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -10,6 +10,7 @@ import {
   CheckCircle,
   GraduationCap,
   Loader2,
+  MessageCircle,
   Send,
   Star,
   Zap,
@@ -17,30 +18,12 @@ import {
 import { SiteFooter } from "@/components/marketing/SiteFooter";
 import { SiteNav } from "@/components/marketing/SiteNav";
 
-type Track = "learner" | "intern";
-
-type ApplicationForm = {
-  fullName: string;
-  email: string;
-  country: string;
-  track: Track;
-  whyJoin: string;
-  linkedinUrl: string;
-};
+const TELEGRAM_LINK = "https://t.me/+G8gswKDxW4hmOWZi";
 
 type MentorshipEnquiry = {
   fullName: string;
   email: string;
   message: string;
-};
-
-const initialForm: ApplicationForm = {
-  fullName: "",
-  email: "",
-  country: "",
-  track: "learner",
-  whyJoin: "",
-  linkedinUrl: "",
 };
 
 const initialMentorshipForm: MentorshipEnquiry = {
@@ -51,7 +34,6 @@ const initialMentorshipForm: MentorshipEnquiry = {
 
 const scholarshipPaths = [
   {
-    track: "learner" as Track,
     title: "Learner Path",
     subtitle: "For talented beginners ready to build a serious AI portfolio.",
     icon: GraduationCap,
@@ -65,7 +47,6 @@ const scholarshipPaths = [
     ],
   },
   {
-    track: "intern" as Track,
     title: "Intern Path",
     subtitle: "For experienced professionals ready for Western opportunities.",
     icon: Briefcase,
@@ -79,6 +60,24 @@ const scholarshipPaths = [
   },
 ];
 
+const steps = [
+  {
+    number: "01",
+    title: "Join the Telegram Group",
+    desc: 'Click the button below to join our Cohort 2 interest group. Once inside, type "Intern" if you have existing skills, or "Skilled" if you are experienced — and we will reach out to you.',
+  },
+  {
+    number: "02",
+    title: "Short Interview",
+    desc: "We will invite you for a brief conversation to understand your background and what you are aiming for.",
+  },
+  {
+    number: "03",
+    title: "Get Added to Cohort 2",
+    desc: "Pass the interview and you are in. You will be added to the Cohort 2 training group and given your start date.",
+  },
+];
+
 const paidFeatures = [
   { icon: Zap, text: "Start this week — no cohort waitlist, no application queue" },
   { icon: Star, text: "Personal 1-on-1 mentorship directly from David Adesina and Dean Whitby" },
@@ -89,49 +88,14 @@ const paidFeatures = [
 ];
 
 export default function ApplyPage() {
-  const [form, setForm] = useState<ApplicationForm>(initialForm);
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [mentorshipForm, setMentorshipForm] = useState<MentorshipEnquiry>(initialMentorshipForm);
   const [mentorshipStatus, setMentorshipStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-
-  useEffect(() => {
-    const track = new URLSearchParams(window.location.search).get("track");
-    if (track === "learner" || track === "intern") {
-      setForm((current) => ({ ...current, track }));
-    }
-  }, []);
-
-  const updateField = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = event.target;
-    setForm((current) => ({ ...current, [name]: value }));
-  };
 
   const updateMentorshipField = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = event.target;
     setMentorshipForm((current) => ({ ...current, [name]: value }));
-  };
-
-  const submitApplication = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setStatus("loading");
-
-    try {
-      const response = await fetch("/api/apply", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!response.ok) throw new Error("Application request failed");
-      setStatus("success");
-      setForm(initialForm);
-    } catch (error) {
-      console.error("Application submission failed:", error);
-      setStatus("error");
-    }
   };
 
   const submitMentorshipEnquiry = async (event: FormEvent<HTMLFormElement>) => {
@@ -225,19 +189,13 @@ export default function ApplyPage() {
 
           <div className="grid lg:grid-cols-2 gap-6">
             {scholarshipPaths.map((path, index) => (
-              <motion.button
-                type="button"
-                key={path.track}
+              <motion.div
+                key={path.title}
                 initial={{ opacity: 0, y: 26 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                onClick={() => setForm((current) => ({ ...current, track: path.track }))}
-                className={`text-left bg-surface border rounded-2xl p-8 transition-all ${
-                  form.track === path.track
-                    ? "border-gold shadow-2xl shadow-gold/10"
-                    : "border-border hover:border-gold/30"
-                }`}
+                className="text-left bg-surface border border-border rounded-2xl p-8"
               >
                 <div className="flex items-start gap-5 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
@@ -261,13 +219,13 @@ export default function ApplyPage() {
                     </li>
                   ))}
                 </ul>
-              </motion.button>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Scholarship Application Form */}
+      {/* How to Apply — Telegram CTA */}
       <section className="py-20 px-6 lg:px-8 bg-surface border-y border-border">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -275,134 +233,66 @@ export default function ApplyPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="mb-12"
+            className="text-center mb-14"
           >
             <span className="text-gold text-xs font-semibold tracking-widest uppercase mb-5 block">
-              Scholarship Application
+              How to Apply
             </span>
             <h2 className="text-4xl md:text-5xl font-black leading-tight mb-5">
-              Tell us where you are starting from.
+              Three Steps to Cohort 2.
             </h2>
-            <p className="text-secondary text-lg leading-relaxed">
-              Clear answers help us understand your fit, your goals, and the path that gives you
-              the strongest chance of success.
+            <p className="text-secondary text-lg leading-relaxed max-w-xl mx-auto">
+              No long forms. Just join the group, have a quick conversation with us, and if it is a
+              good fit — you are in.
             </p>
           </motion.div>
 
-          <motion.form
-            initial={{ opacity: 0, y: 30 }}
+          {/* Steps */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            onSubmit={submitApplication}
-            className="grid md:grid-cols-2 gap-5"
+            transition={{ duration: 0.6 }}
+            className="grid md:grid-cols-3 gap-6 mb-14"
           >
-            <label className="space-y-2">
-              <span className="text-white text-sm font-semibold">Full Name</span>
-              <input
-                required
-                name="fullName"
-                value={form.fullName}
-                onChange={updateField}
-                placeholder="Your full name"
-                autoComplete="name"
-              />
-            </label>
-
-            <label className="space-y-2">
-              <span className="text-white text-sm font-semibold">Email</span>
-              <input
-                required
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={updateField}
-                placeholder="you@example.com"
-                autoComplete="email"
-              />
-            </label>
-
-            <label className="space-y-2">
-              <span className="text-white text-sm font-semibold">Country</span>
-              <input
-                required
-                name="country"
-                value={form.country}
-                onChange={updateField}
-                placeholder="Nigeria"
-                autoComplete="country-name"
-              />
-            </label>
-
-            <label className="space-y-2">
-              <span className="text-white text-sm font-semibold">Which track</span>
-              <select required name="track" value={form.track} onChange={updateField}>
-                <option value="learner">Learner</option>
-                <option value="intern">Intern</option>
-              </select>
-            </label>
-
-            <label className="space-y-2 md:col-span-2">
-              <span className="text-white text-sm font-semibold">Why do you want to join?</span>
-              <textarea
-                required
-                name="whyJoin"
-                value={form.whyJoin}
-                onChange={updateField}
-                placeholder="Tell us about your goals, current skills, and what you want this program to unlock."
-                rows={6}
-              />
-            </label>
-
-            <label className="space-y-2 md:col-span-2">
-              <span className="text-white text-sm font-semibold">LinkedIn URL</span>
-              <input
-                required
-                type="url"
-                name="linkedinUrl"
-                value={form.linkedinUrl}
-                onChange={updateField}
-                placeholder="https://www.linkedin.com/in/your-profile"
-                autoComplete="url"
-              />
-            </label>
-
-            <div className="md:col-span-2 flex flex-col sm:flex-row sm:items-center gap-4 pt-3">
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light disabled:opacity-70 disabled:cursor-not-allowed text-black font-bold text-base px-8 py-4 rounded-xl transition-all shadow-xl shadow-gold/25 hover:shadow-gold/40"
+            {steps.map((step, i) => (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                className="bg-background border border-border rounded-2xl p-6 text-center"
               >
-                {status === "loading" ? (
-                  <Loader2 className="w-5 h-5 animate-spin" />
-                ) : (
-                  <Send className="w-5 h-5" />
-                )}
-                Submit Application
-              </button>
+                <div className="text-4xl font-black text-gold/20 mb-4">{step.number}</div>
+                <h3 className="text-white font-bold text-base mb-2">{step.title}</h3>
+                <p className="text-secondary text-sm leading-relaxed">{step.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
 
-              {status === "success" && (
-                <p className="text-sm text-gold font-medium">
-                  Application submitted. We will review it and follow up soon.
-                </p>
-              )}
-              {status === "error" && (
-                <p className="text-sm text-red-400 font-medium">
-                  Something went wrong. Please try again.
-                </p>
-              )}
-            </div>
-          </motion.form>
-
-          <div className="mt-10">
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 text-secondary hover:text-white text-sm font-medium transition-colors"
+          {/* Telegram CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <a
+              href={TELEGRAM_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-gold hover:bg-gold-light text-black font-bold text-lg px-10 py-5 rounded-xl transition-all shadow-2xl shadow-gold/30 hover:shadow-gold/50 hover:-translate-y-0.5"
             >
-              Learn more about The Gate Project
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+              <MessageCircle className="w-6 h-6" />
+              Join the Cohort 2 Telegram Group
+              <ArrowRight className="w-5 h-5" />
+            </a>
+            <p className="text-secondary/60 text-sm mt-4">
+              Free to join. Interview required. Limited spots available.
+            </p>
+          </motion.div>
         </div>
       </section>
 
