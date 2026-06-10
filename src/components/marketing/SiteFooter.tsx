@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const programmeLinks = [
   ["Learner Path", "/apply?track=learner"],
@@ -23,9 +24,7 @@ export function SiteFooter() {
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-9 h-9 bg-gradient-to-br from-gold to-gold-dark rounded-lg flex items-center justify-center">
-                <span className="text-black font-black text-lg">G</span>
-              </div>
+              <Image src="/nav-logo.png" alt="The Gate Project" width={36} height={36} className="rounded-lg" />
               <span className="text-white font-bold text-lg">The Gate Project</span>
             </Link>
             <p className="text-secondary text-sm leading-relaxed max-w-xs mb-6">

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MapPin, Building2, ExternalLink } from "lucide-react";
+import { ArrowRight, Flag, Building2, ExternalLink } from "lucide-react";
 import { SiteFooter } from "@/components/marketing/SiteFooter";
 import { SiteNav } from "@/components/marketing/SiteNav";
 
@@ -13,7 +13,7 @@ const graduates = [
     role: "AI & GEO Specialist",
     company: "Tenacious AI Marketing Global",
     companyUrl: null,
-    location: "Nigeria",
+    nationality: "Nigerian",
     placedMonth: "April 2026",
     photo: "/alumni/james.jpg",
     quote:
@@ -27,7 +27,7 @@ const graduates = [
     role: "LinkedIn & GEO Specialist",
     company: "Secured Placement",
     companyUrl: null,
-    location: "Nigeria",
+    nationality: "Nigerian",
     placedMonth: "April 2026",
     photo: "/alumni/oluwaninyo.jpg",
     quote:
@@ -41,7 +41,7 @@ const graduates = [
     role: "AI Automation Specialist",
     company: "Host Planet & WISH",
     companyUrl: null,
-    location: "Tbilisi, Georgia",
+    nationality: "Nigerian",
     placedMonth: "May 2026",
     photo: "/alumni/eniola.jpg",
     quote:
@@ -55,7 +55,7 @@ const graduates = [
     role: "AI Automation Engineer",
     company: "CH4B — Central Hub For Business, UK",
     companyUrl: null,
-    location: "Nigeria",
+    nationality: "Nigerian",
     placedMonth: "Within 1 week of graduating",
     photo: "/alumni/samuel.jpg",
     quote:
@@ -69,7 +69,7 @@ const graduates = [
     role: "AI Automation & GEO Specialist",
     company: "Better People Recruitment",
     companyUrl: "https://www.betterpeopleltd.co.uk/",
-    location: "Nigeria",
+    nationality: "Nigerian",
     placedMonth: "June 2026",
     linkedIn: "https://www.linkedin.com/in/esther-abem-6316193b6",
     photo: "/alumni/esther.jpg",
@@ -172,8 +172,8 @@ export default function AlumniPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute bottom-6 left-6">
                     <div className="flex items-center gap-2 text-white/80 text-sm">
-                      <MapPin className="w-4 h-4 text-gold" />
-                      {grad.location}
+                      <Flag className="w-4 h-4 text-gold" />
+                      {grad.nationality}
                     </div>
                   </div>
                 </div>

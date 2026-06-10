@@ -60,7 +60,7 @@ const featuredAlumni = [
     placement: "CH4B UK",
     result: "Hired within 1 week of graduating",
     photo: "/alumni/samuel.jpg",
-    country: "Nigeria → United Kingdom",
+    country: "Nigerian",
     quote: "The Gate Project gave me the exact skills UK companies were searching for.",
   },
   {
@@ -69,7 +69,7 @@ const featuredAlumni = [
     placement: "Better People Recruitment",
     result: "Placed June 2026",
     photo: "/alumni/esther.jpg",
-    country: "Nigeria → UK market",
+    country: "Nigerian",
     quote: "I went from knowing nothing about AI to running automation systems for a UK recruitment firm.",
   },
   {
@@ -78,7 +78,7 @@ const featuredAlumni = [
     placement: "Tenacious AI Marketing Global",
     result: "Placed April 2026",
     photo: "/alumni/james.jpg",
-    country: "Nigeria → Global",
+    country: "Nigerian",
     quote: "Consistent learning and hands-on practice can quickly transform a beginner into a specialist.",
   },
 ];

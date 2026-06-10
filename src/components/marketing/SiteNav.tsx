@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
@@ -20,9 +21,13 @@ export function SiteNav() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-3 group" onClick={closeMenu}>
-            <div className="w-9 h-9 bg-gradient-to-br from-gold to-gold-dark rounded-lg flex items-center justify-center shadow-lg shadow-gold/20">
-              <span className="text-black font-black text-lg">G</span>
-            </div>
+            <Image
+              src="/nav-logo.png"
+              alt="The Gate Project"
+              width={36}
+              height={36}
+              className="rounded-lg"
+            />
             <span className="text-white font-bold text-lg tracking-tight">The Gate Project</span>
           </Link>
 
