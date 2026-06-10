@@ -16,21 +16,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
+  const canonicalUrl = `https://thegateproject.africa/blog/${slug}`;
   return {
     title: `${post.title} | The Gate Project`,
     description: post.metaDescription,
     authors: [{ name: post.author }],
+    alternates: { canonical: canonicalUrl },
     openGraph: {
       title: post.title,
       description: post.metaDescription,
       type: "article",
       publishedTime: post.publishedAt,
+      modifiedTime: post.publishedAt,
       authors: [post.author],
+      url: canonicalUrl,
+      images: [
+        {
+          url: "https://thegateproject.africa/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.metaDescription,
+      images: ["https://thegateproject.africa/og-image.jpg"],
     },
   };
 }
@@ -83,21 +96,31 @@ export default async function BlogPostPage({ params }: Props) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `https://thegateproject.africa/blog/${post.slug}#article`,
     headline: post.title,
     description: post.metaDescription,
     datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    image: {
+      "@type": "ImageObject",
+      url: "https://thegateproject.africa/og-image.jpg",
+      width: 1200,
+      height: 630,
+    },
     author: {
       "@type": "Person",
       name: post.author,
       jobTitle: post.authorRole,
       worksFor: {
         "@type": "Organization",
+        "@id": "https://thegateproject.africa/#organization",
         name: "The Gate Project",
         url: "https://thegateproject.africa",
       },
     },
     publisher: {
       "@type": "Organization",
+      "@id": "https://thegateproject.africa/#organization",
       name: "The Gate Project",
       url: "https://thegateproject.africa",
       logo: {

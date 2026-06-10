@@ -9,10 +9,13 @@ export const metadata: Metadata = {
   title: "Blog | The Gate Project",
   description:
     "Insights on AI automation, GEO, n8n workflows, and how African professionals are landing remote roles at Western companies.",
+  alternates: { canonical: "https://thegateproject.africa/blog" },
   openGraph: {
     title: "Blog | The Gate Project",
     description:
       "Insights on AI automation, GEO, n8n workflows, and how African professionals are landing remote roles at Western companies.",
+    url: "https://thegateproject.africa/blog",
+    images: [{ url: "https://thegateproject.africa/og-image.jpg", width: 1200, height: 630 }],
   },
 };
 

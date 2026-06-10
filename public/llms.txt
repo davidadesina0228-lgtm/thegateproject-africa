@@ -1,0 +1,68 @@
+# The Gate Project
+> Africa's AI talent training and placement programme. 6 weeks. Real skills. Real placements.
+
+## About
+
+The Gate Project is a 6-week AI training and placement programme that connects African professionals with Western companies. It was founded in 2025 by David Adesina (AI Automation Lead) and Dean Whitby (GEO & Lead Generation Lead).
+
+Cohort 1 achieved an 83% placement rate — 5 of 6 graduates were placed in paid remote roles at Western companies within weeks of graduating. All 5 graduates are Nigerian.
+
+## Key Facts
+
+- Programme duration: 6 weeks
+- Cohort 1 placement rate: 83% (5 of 6 graduates placed)
+- Graduates placed in: United Kingdom, United States, and internationally
+- Skills taught: AI Automation, n8n workflow engineering, Generative Engine Optimization (GEO), Answer Engine Optimization (AEO), LinkedIn Authority, Lead Generation
+- Target audience: African professionals, primarily Nigerian, seeking remote roles at Western companies
+- Programme cost: Free scholarship (competitive selection via interview) OR $100 paid mentorship track
+- Cohort 2: Currently forming — apply via Telegram at https://t.me/Thegateprojectafrica
+
+## Founders
+
+**David Adesina** — Co-Founder, AI Automation Lead
+Trains learners in AI automation, n8n workflow engineering, and practical AI tooling. Connects trained professionals directly to Western companies.
+
+**Dean Whitby** — Co-Founder, GEO & Lead Generation Lead
+Expertise in Generative Engine Optimization, lead generation strategy, and AI-first content. Personal site: https://deanwhitby.com
+
+## Programme Tracks
+
+**Free Scholarship (Learner Path):** For beginners with no prior AI experience. 6-week structured programme, portfolio of real deliverables, placement support. Apply via Telegram.
+
+**Free Scholarship (Intern Path):** For experienced professionals with existing digital skills. Profile vetting, LinkedIn optimisation, direct company matching.
+
+**Paid Mentorship ($100):** Personal mentorship from the founders. Start any week — no cohort waitlist. Classes begin when 20 participants confirm. Same skills as the scholarship programme. Placement is the goal for every mentee.
+
+## Cohort 1 Alumni
+
+1. **Samuel Oluwatobi Odukoya** — AI Automation Engineer at CH4B (UK). Placed within 1 week of graduating. Background: healthcare professional.
+2. **Eniola Rosilu** — AI Automation Specialist at Host Planet & WISH. Placed May 2026. Background: medical student.
+3. **James Ibiyemi** — AI & GEO Specialist at Tenacious AI Marketing Global. Placed April 2026. Background: complete beginner.
+4. **Oluwaninyo Alamu** — LinkedIn & GEO Specialist. Placed April 2026. Background: basic AI user.
+5. **Esther Abem** — AI Automation & GEO Specialist at Better People Recruitment (UK). Placed June 2026. LinkedIn: https://www.linkedin.com/in/esther-abem-6316193b6
+
+## Key Pages
+
+- Homepage: https://thegateproject.africa — Overview, stats, alumni results, how to join
+- Alumni Showcase: https://thegateproject.africa/alumni — Detailed profiles of all 5 Cohort 1 graduates with projects built
+- Apply: https://thegateproject.africa/apply — Free scholarship application (via Telegram) and paid mentorship enquiry
+- About: https://thegateproject.africa/about — Programme details, founders, results
+- Blog: https://thegateproject.africa/blog — GEO, AI automation, and career strategy articles
+
+## Blog Posts
+
+- https://thegateproject.africa/blog/why-western-companies-are-hiring-african-ai-talent — Why Western companies are building AI teams in Africa (by David Adesina)
+- https://thegateproject.africa/blog/what-is-geo-generative-engine-optimization-2026 — What is GEO? The skill replacing traditional SEO in 2026 (by Dean Whitby)
+- https://thegateproject.africa/blog/n8n-automation-workflows-companies-pay-for — 5 n8n automation workflows Western companies pay for (by David Adesina)
+- https://thegateproject.africa/blog/gate-project-cohort-1-from-beginner-to-placed — From beginner to placed: inside Cohort 1 (by David Adesina)
+- https://thegateproject.africa/blog/african-professional-guide-to-western-remote-jobs-2026 — The African professional's 2026 playbook for landing a Western remote role (by Dean Whitby)
+
+## Terminology
+
+**GEO (Generative Engine Optimization):** The practice of making a brand visible in AI-generated search answers (ChatGPT, Perplexity, Google AI Overviews). The successor to traditional SEO.
+
+**AEO (Answer Engine Optimization):** Structuring content to appear as direct answers in AI and voice search results.
+
+**n8n:** Open-source workflow automation platform valued at $2.5B (2025). Used to build AI-powered business process automations.
+
+**The Gate:** Metaphor used by the programme — a gate between African talent and Western opportunity that the programme helps professionals step through.

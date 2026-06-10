@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | The Gate Project",
   },
   description:
-    "The Gate Project is a 6-week AI training and placement programme connecting African professionals with Western companies. Cohort 1: 100% placement rate. 5 graduates. 3 countries. Apply for Cohort 2.",
+    "The Gate Project is a 6-week AI training and placement programme connecting African professionals with Western companies. Cohort 1: 83% placement rate — 5 of 6 graduates placed in Western companies. Apply for Cohort 2.",
   keywords: [
     "African AI talent",
     "AI training programme Africa",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "The Gate Project",
     title: "The Gate Project | Africa's AI Talent Pipeline",
     description:
-      "6 weeks. Real AI skills. 100% placement rate. The Gate Project trains African professionals and places them in Western companies.",
+      "6 weeks. Real AI skills. 83% placement rate — 5 of 6 graduates placed. The Gate Project trains African professionals and places them in Western companies.",
     images: [
       {
         url: "/og-image.jpg",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Gate Project | Africa's AI Talent Pipeline",
     description:
-      "6 weeks. Real AI skills. 100% placement rate. Train here. Work anywhere.",
+      "6 weeks. Real AI skills. 83% placement rate. Train here. Work anywhere.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -76,15 +76,30 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "EducationalOrganization"],
+  "@id": "https://thegateproject.africa/#organization",
   name: "The Gate Project",
   url: "https://thegateproject.africa",
   description:
-    "The Gate Project is a 6-week AI talent development and internship placement programme that connects African professionals with Western companies. Founded by David Adesina and Dean Whitby.",
+    "The Gate Project is a 6-week AI talent development and placement programme that connects African professionals with Western companies. Cohort 1 achieved an 83% placement rate — 5 of 6 graduates placed in paid remote roles. Founded by David Adesina and Dean Whitby.",
   foundingDate: "2025",
   founders: [
-    { "@type": "Person", name: "David Adesina" },
-    { "@type": "Person", name: "Dean Whitby" },
+    {
+      "@type": "Person",
+      name: "David Adesina",
+      jobTitle: "Co-Founder, AI Automation Lead",
+      worksFor: { "@type": "Organization", name: "The Gate Project" },
+      knowsAbout: ["AI Automation", "n8n workflow engineering", "AI talent development"],
+    },
+    {
+      "@type": "Person",
+      name: "Dean Whitby",
+      jobTitle: "Co-Founder, GEO & Lead Generation Lead",
+      url: "https://deanwhitby.com",
+      sameAs: ["https://deanwhitby.com"],
+      worksFor: { "@type": "Organization", name: "The Gate Project" },
+      knowsAbout: ["Generative Engine Optimization", "Lead Generation", "Answer Engine Optimization"],
+    },
   ],
   areaServed: ["Africa", "Nigeria", "United Kingdom", "United States", "Europe"],
   knowsAbout: [
@@ -94,8 +109,12 @@ const jsonLd = {
     "LinkedIn Authority Marketing",
     "Answer Engine Optimization",
     "Talent Development",
+    "African AI talent pipeline",
+    "Remote work placement",
   ],
-  sameAs: ["https://thegateproject.africa"],
+  sameAs: [
+    "https://t.me/Thegateprojectafrica",
+  ],
 };
 
 export default function RootLayout({
