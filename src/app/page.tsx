@@ -480,7 +480,7 @@ export default function HomePage() {
               <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
                 <div>
                   <span className="inline-block text-xs font-bold px-3 py-1 rounded-full mb-5 bg-gold/15 text-gold border border-gold/30">
-                    Paid Mentorship · $500
+                    Paid Mentorship · $100
                   </span>
                   <h3 className="text-white font-black text-2xl mb-3">
                     Can&apos;t Wait for a Cohort?
@@ -505,8 +505,9 @@ export default function HomePage() {
                 </div>
                 <div className="flex flex-col items-start md:items-end gap-4">
                   <div>
-                    <div className="text-4xl font-black text-white mb-1">$500</div>
+                    <div className="text-4xl font-black text-white mb-1">$100</div>
                     <p className="text-secondary text-sm">for the full 6-week programme</p>
+                    <p className="text-secondary/60 text-xs mt-1">Starts when 20 people confirm</p>
                   </div>
                   <Link
                     href="/apply#paid-mentorship"

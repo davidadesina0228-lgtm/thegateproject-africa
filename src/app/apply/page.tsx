@@ -437,7 +437,7 @@ export default function ApplyPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-black text-white">Personal Mentorship</h3>
-                    <p className="text-gold text-sm font-bold">$500 · 6 Weeks · Start Anytime</p>
+                    <p className="text-gold text-sm font-bold">$100 · 6 Weeks · Limited Spots</p>
                   </div>
                 </div>
 
@@ -452,11 +452,11 @@ export default function ApplyPage() {
 
                 <div className="border-t border-border pt-6">
                   <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-4xl font-black text-white">$500</span>
+                    <span className="text-4xl font-black text-white">$100</span>
                     <span className="text-secondary text-sm">for the full 6-week programme</span>
                   </div>
                   <p className="text-secondary/60 text-xs">
-                    Payment details confirmed after we speak with you.
+                    Classes begin once we reach 20 confirmed participants. Payment confirmed at that point.
                   </p>
                 </div>
               </div>
