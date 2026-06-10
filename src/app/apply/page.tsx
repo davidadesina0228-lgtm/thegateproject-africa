@@ -132,35 +132,33 @@ export default function ApplyPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-gold/10 border border-gold/25 rounded-full text-gold text-xs font-semibold tracking-widest uppercase mb-8">
-              Two Ways to Join
+              Free Scholarship — Cohort 2
             </span>
             <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight mb-8">
-              Get In.
+              Apply for Free.
               <br />
               <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
-                Get Placed.
+                Get Placed for Real.
               </span>
             </h1>
             <p className="text-lg md:text-2xl text-secondary max-w-3xl mx-auto leading-relaxed mb-10">
-              Free scholarship for those who qualify. Paid personal mentorship for those who want to
-              start now. Both paths lead to the same place — real AI skills and real placements.
+              The Gate Project is a fully-funded 6-week AI training programme for African professionals.
+              If you are selected, your training is <span className="text-white font-semibold">completely free</span> —
+              and we work to place you in a Western company when you graduate.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="#scholarship"
-                className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-black font-bold text-base px-8 py-4 rounded-xl transition-all shadow-xl shadow-gold/25"
-              >
-                Apply for Free Scholarship
-                <ArrowRight className="w-5 h-5" />
+            <a
+              href="#scholarship"
+              className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-black font-bold text-lg px-10 py-5 rounded-xl transition-all shadow-xl shadow-gold/25 hover:-translate-y-0.5"
+            >
+              Apply for the Free Scholarship
+              <ArrowRight className="w-5 h-5" />
+            </a>
+            <p className="text-secondary/50 text-sm mt-5">
+              Didn&apos;t qualify or can&apos;t wait?{" "}
+              <a href="#paid-mentorship" className="underline underline-offset-4 hover:text-secondary transition-colors">
+                There is a $100 mentorship option.
               </a>
-              <a
-                href="#paid-mentorship"
-                className="inline-flex items-center gap-2 bg-transparent border border-gold/40 hover:border-gold text-gold hover:text-white font-bold text-base px-8 py-4 rounded-xl transition-all"
-              >
-                $100 Paid Mentorship
-                <ArrowRight className="w-5 h-5" />
-              </a>
-            </div>
+            </p>
           </motion.div>
         </div>
       </section>
@@ -239,11 +237,11 @@ export default function ApplyPage() {
               How to Apply
             </span>
             <h2 className="text-4xl md:text-5xl font-black leading-tight mb-5">
-              Three Steps to Cohort 2.
+              Three Steps. No Fees.
             </h2>
             <p className="text-secondary text-lg leading-relaxed max-w-xl mx-auto">
-              No long forms. Just join the group, have a quick conversation with us, and if it is a
-              good fit — you are in.
+              Join the Telegram group, introduce yourself, pass a short interview.
+              If you are selected, your training is free and we work to place you when you graduate.
             </p>
           </motion.div>
 
@@ -313,16 +311,12 @@ export default function ApplyPage() {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-black text-white mb-3">
-              Don&apos;t Want to Wait for a Cohort?
-              <br />
-              <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
-                Start Learning This Week.
-              </span>
+              Didn&apos;t Qualify — or Can&apos;t Wait?
             </h2>
             <p className="text-secondary text-lg max-w-2xl leading-relaxed">
-              The free scholarship runs on a fixed cohort schedule. The paid track starts when you
-              do — personal mentorship from the founders, the exact same skills, and the same goal:
-              getting you placed.
+              The scholarship is selective and runs on a cohort schedule. If you did not make the
+              cut or want to start immediately, there is a $100 mentorship option. Same skills,
+              same goal — just a different entry point.
             </p>
           </motion.div>
 

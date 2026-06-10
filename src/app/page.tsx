@@ -124,7 +124,7 @@ export default function HomePage() {
             <motion.div variants={fadeUp}>
               <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-gold/10 border border-gold/25 rounded-full text-gold text-xs font-semibold tracking-widest uppercase mb-10">
                 <span className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse" />
-                Cohort 2 Applications Open
+                Free Scholarship — Cohort 2 Now Forming
               </span>
             </motion.div>
 
@@ -132,10 +132,10 @@ export default function HomePage() {
               variants={fadeUp}
               className="text-5xl sm:text-6xl md:text-7xl lg:text-[88px] font-black leading-[1.05] tracking-tight mb-8"
             >
-              Train Here.
+              Free AI Training.
               <br />
               <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
-                Work Anywhere.
+                Real Western Placements.
               </span>
             </motion.h1>
 
@@ -143,10 +143,10 @@ export default function HomePage() {
               variants={fadeUp}
               className="text-lg sm:text-xl md:text-2xl text-secondary max-w-3xl mx-auto mb-12 leading-relaxed"
             >
-              The Gate Project is Africa&apos;s most focused AI talent pipeline — a 6-week
-              program that has placed{" "}
-              <span className="text-white font-semibold">5 of its 6 graduates</span>{" "}
-              into real, paid roles at Western companies.
+              The Gate Project trains African professionals in the AI skills Western companies
+              are actively hiring for — <span className="text-white font-semibold">completely free</span> — then
+              introduces our graduates directly to those companies.
+              Cohort 1: <span className="text-white font-semibold">5 of 6 placed.</span>
             </motion.p>
 
             <motion.div
@@ -157,14 +157,14 @@ export default function HomePage() {
                 href="/apply"
                 className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-black font-bold text-base px-8 py-4 rounded-xl transition-all shadow-xl shadow-gold/25 hover:shadow-gold/40 hover:-translate-y-0.5"
               >
-                Apply for Cohort 2
+                Apply for Free
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/alumni"
                 className="inline-flex items-center gap-2 bg-transparent hover:bg-white/5 text-white border border-white/15 font-medium text-base px-8 py-4 rounded-xl transition-all"
               >
-                See the Results
+                See Cohort 1 Results
               </Link>
             </motion.div>
 
@@ -199,28 +199,28 @@ export default function HomePage() {
                 What We Do
               </span>
               <h2 className="text-4xl md:text-5xl font-black leading-tight mb-8">
-                We Don&apos;t Just Train.
+                Free Training.
                 <br />
-                We{" "}
                 <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
-                  Place.
+                  Real Placements.
                 </span>
               </h2>
               <p className="text-secondary text-lg leading-relaxed mb-6">
-                The Gate Project was founded on one belief: African professionals are
-                world-class talent. They just need the right skills, the right structure,
-                and the right door. We build the door.
+                African professionals are world-class talent. The only thing standing
+                between them and Western opportunities is the right skills and the right
+                door. We provide both — at no cost to the people we select.
               </p>
               <p className="text-secondary text-lg leading-relaxed mb-10">
-                Our 6-week program teaches the exact tools Western companies are hiring for
-                right now — AI automation, GEO, n8n workflows, and LinkedIn lead generation.
-                Then we introduce our graduates to those companies directly.
+                Our 6-week scholarship programme teaches the exact tools Western companies
+                are hiring for right now. When graduates finish, we introduce them
+                directly to those companies. That&apos;s it. No fees. No middlemen.
               </p>
               <div className="flex flex-col gap-3">
                 {[
-                  "Skills taught by practitioners, not academics",
+                  "Completely free for selected scholarship participants",
+                  "6 weeks of hands-on AI automation, GEO, and n8n training",
                   "Portfolio of real deliverables — not just a certificate",
-                  "Direct introductions to Western companies",
+                  "Direct introductions to vetted Western companies",
                   "Cohort 1: 83% placement rate (5 of 6 placed)",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3">
@@ -376,7 +376,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Ways to Join ── */}
+      {/* ── The Scholarship ── */}
       <section className="py-32 px-6 lg:px-8 bg-surface border-y border-border">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -387,52 +387,54 @@ export default function HomePage() {
             className="text-center max-w-2xl mx-auto mb-16"
           >
             <span className="text-gold text-xs font-semibold tracking-widest uppercase mb-5 block">
-              How to Join
+              The Scholarship
             </span>
             <h2 className="text-4xl md:text-5xl font-black leading-tight">
-              Two Ways In.
+              The Training Is Free.
               <br />
               <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
-                One Destination.
+                The Placement Is Real.
               </span>
             </h2>
             <p className="text-secondary text-lg mt-6 leading-relaxed">
-              Free scholarship for those who qualify. Paid mentorship for those who want to start now.
+              We select talented African professionals through a short interview. If you are chosen,
+              your 6-week AI training is completely free — and we work to place you
+              in a Western company when you graduate.
             </p>
           </motion.div>
 
-          {/* Free scholarship cards */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
+          {/* Two scholarship paths */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
             {[
               {
-                badge: "Learner Path · FREE",
+                badge: "For Beginners",
                 badgeColor: "bg-blue-500/10 text-blue-400 border border-blue-400/20",
-                title: "Starting Out?",
-                desc: "No experience required. The Learner Path is a 6-week intensive programme that takes you from zero to a working AI portfolio. We teach you what the market actually needs.",
+                title: "No AI experience? Good.",
+                desc: "The Learner Path is built for complete beginners. You will leave with a working AI portfolio, real skills, and a direct introduction to companies hiring for those skills.",
                 bullets: [
-                  "No prior AI experience needed",
-                  "6 weeks, structured curriculum",
-                  "Weekly mentorship sessions",
-                  "Build a real portfolio",
-                  "Unpaid internship opportunity",
+                  "Zero AI experience required",
+                  "6 weeks of structured, hands-on training",
+                  "AI automation, GEO, n8n, LinkedIn lead generation",
+                  "Real project portfolio — not a certificate",
+                  "Placement support when you graduate",
                 ],
-                cta: "Apply as a Learner",
-                href: "/apply?track=learner",
+                cta: "Apply for the Learner Scholarship",
+                href: "/apply",
               },
               {
-                badge: "Intern Path · FREE",
+                badge: "For Experienced Professionals",
                 badgeColor: "bg-gold/10 text-gold border border-gold/25",
-                title: "Already Skilled?",
-                desc: "Bring your existing skills. The Intern Path is for experienced professionals ready for Western opportunities. We vet your profile, sharpen your edges, and introduce you directly.",
+                title: "Already skilled?",
+                desc: "The Intern Path is for professionals who already have digital or technical skills and are ready to be matched with Western companies. We vet your profile and make the introduction.",
                 bullets: [
                   "For professionals with existing skills",
-                  "Profile vetting & polishing",
-                  "Interview preparation",
-                  "Direct company matching",
-                  "Mentorship while you wait",
+                  "Profile vetting and interview preparation",
+                  "LinkedIn positioning that gets noticed",
+                  "Direct matching with vetted Western companies",
+                  "Mentorship throughout the process",
                 ],
-                cta: "Apply as an Intern",
-                href: "/apply?track=intern",
+                cta: "Apply for the Intern Scholarship",
+                href: "/apply",
               },
             ].map((path, i) => (
               <motion.div
@@ -444,14 +446,14 @@ export default function HomePage() {
                 className="bg-background border border-border rounded-2xl p-8 hover:border-gold/30 transition-colors"
               >
                 <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-6 ${path.badgeColor}`}>
-                  {path.badge}
+                  {path.badge} · FREE
                 </span>
                 <h3 className="text-white font-black text-2xl mb-4">{path.title}</h3>
                 <p className="text-secondary text-sm leading-relaxed mb-8">{path.desc}</p>
                 <ul className="space-y-3 mb-8">
                   {path.bullets.map((b) => (
                     <li key={b} className="flex items-center gap-3 text-secondary text-sm">
-                      <div className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-gold flex-shrink-0" />
                       {b}
                     </li>
                   ))}
@@ -467,59 +469,19 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Paid mentorship banner */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          {/* Paid track — small footnote */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="max-w-4xl mx-auto"
+            transition={{ duration: 0.6 }}
+            className="text-center text-secondary/50 text-sm max-w-lg mx-auto"
           >
-            <div className="bg-background border border-gold/30 rounded-2xl p-8 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-80 h-80 bg-gold/5 rounded-full -translate-y-40 translate-x-40 pointer-events-none" />
-              <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
-                <div>
-                  <span className="inline-block text-xs font-bold px-3 py-1 rounded-full mb-5 bg-gold/15 text-gold border border-gold/30">
-                    Paid Mentorship · $100
-                  </span>
-                  <h3 className="text-white font-black text-2xl mb-3">
-                    Can&apos;t Wait for a Cohort?
-                  </h3>
-                  <p className="text-secondary text-sm leading-relaxed mb-4">
-                    Start this week with personal mentorship from David and Dean. Same skills.
-                    Same goal. No waiting list.
-                  </p>
-                  <ul className="space-y-2">
-                    {[
-                      "Start immediately — no cohort schedule",
-                      "Personal mentorship from the founders",
-                      "The exact skills companies are hiring for",
-                      "Placement is the goal for every mentee",
-                    ].map((b) => (
-                      <li key={b} className="flex items-center gap-3 text-secondary text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="flex flex-col items-start md:items-end gap-4">
-                  <div>
-                    <div className="text-4xl font-black text-white mb-1">$100</div>
-                    <p className="text-secondary text-sm">for the full 6-week programme</p>
-                    <p className="text-secondary/60 text-xs mt-1">Starts when 20 people confirm</p>
-                  </div>
-                  <Link
-                    href="/apply#paid-mentorship"
-                    className="flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-black font-bold text-sm px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-gold/20"
-                  >
-                    Get Started Now
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+            Didn&apos;t qualify for the scholarship but still want to learn?{" "}
+            <Link href="/apply#paid-mentorship" className="text-secondary hover:text-gold underline underline-offset-4 transition-colors">
+              There is a $100 mentorship option.
+            </Link>
+          </motion.p>
         </div>
       </section>
 
@@ -594,32 +556,35 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-gold text-xs font-semibold tracking-widest uppercase mb-6 block">
-              The Gate Is Open
+              Apply for Free
             </span>
             <h2 className="text-4xl md:text-6xl font-black leading-tight mb-8">
-              Your Cohort 2
+              The Training Costs Nothing.
               <br />
               <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
-                Spot Is Waiting.
+                The Opportunity Is Real.
               </span>
             </h2>
-            <p className="text-xl text-secondary mb-12 max-w-xl mx-auto leading-relaxed">
-              Cohort 1 proved it works. Now it&apos;s your turn. Applications for Cohort 2
-              are open — and spots are limited.
+            <p className="text-xl text-secondary mb-4 max-w-xl mx-auto leading-relaxed">
+              Cohort 1 proved it works — 5 of 6 graduates placed in paid Western roles,
+              all starting from zero. Cohort 2 is forming now. Spots are limited.
+            </p>
+            <p className="text-base text-secondary/60 mb-12 max-w-lg mx-auto">
+              Join the Telegram group, pass a short interview, and your place is free.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/apply"
                 className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-black font-bold text-lg px-10 py-5 rounded-xl transition-all shadow-2xl shadow-gold/30 hover:shadow-gold/50 hover:-translate-y-0.5"
               >
-                Apply Now
+                Apply for Free
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
-                href="/about"
+                href="/alumni"
                 className="inline-flex items-center gap-2 text-white border border-white/15 font-medium text-lg px-10 py-5 rounded-xl hover:bg-white/5 transition-colors"
               >
-                Learn More
+                See Who Got Placed
               </Link>
             </div>
           </motion.div>
