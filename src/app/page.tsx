@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle, Zap, Globe, Shield, Award } from "lucide-react
 import Link from "next/link";
 import Image from "next/image";
 import { SiteNav } from "@/components/marketing/SiteNav";
+import { SiteFooter } from "@/components/marketing/SiteFooter";
 
 const fadeUp = {
   initial: { opacity: 0, y: 40 },
@@ -375,7 +376,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Two Paths ── */}
+      {/* ── Ways to Join ── */}
       <section className="py-32 px-6 lg:px-8 bg-surface border-y border-border">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -386,36 +387,40 @@ export default function HomePage() {
             className="text-center max-w-2xl mx-auto mb-16"
           >
             <span className="text-gold text-xs font-semibold tracking-widest uppercase mb-5 block">
-              Who It&apos;s For
+              How to Join
             </span>
             <h2 className="text-4xl md:text-5xl font-black leading-tight">
-              Two Paths.
+              Two Ways In.
               <br />
               <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
                 One Destination.
               </span>
             </h2>
+            <p className="text-secondary text-lg mt-6 leading-relaxed">
+              Free scholarship for those who qualify. Paid mentorship for those who want to start now.
+            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {/* Free scholarship cards */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
             {[
               {
-                badge: "Learner Path",
+                badge: "Learner Path · FREE",
                 badgeColor: "bg-blue-500/10 text-blue-400 border border-blue-400/20",
                 title: "Starting Out?",
-                desc: "No experience required. The Learner Path is a 6-week intensive program that takes you from zero to a working AI portfolio. We teach you what the market actually needs.",
+                desc: "No experience required. The Learner Path is a 6-week intensive programme that takes you from zero to a working AI portfolio. We teach you what the market actually needs.",
                 bullets: [
                   "No prior AI experience needed",
                   "6 weeks, structured curriculum",
                   "Weekly mentorship sessions",
                   "Build a real portfolio",
-                  "Internship placement support",
+                  "Unpaid internship opportunity",
                 ],
                 cta: "Apply as a Learner",
                 href: "/apply?track=learner",
               },
               {
-                badge: "Intern Path",
+                badge: "Intern Path · FREE",
                 badgeColor: "bg-gold/10 text-gold border border-gold/25",
                 title: "Already Skilled?",
                 desc: "Bring your existing skills. The Intern Path is for experienced professionals ready for Western opportunities. We vet your profile, sharpen your edges, and introduce you directly.",
@@ -461,6 +466,59 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
+
+          {/* Paid mentorship banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="bg-background border border-gold/30 rounded-2xl p-8 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-80 h-80 bg-gold/5 rounded-full -translate-y-40 translate-x-40 pointer-events-none" />
+              <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
+                <div>
+                  <span className="inline-block text-xs font-bold px-3 py-1 rounded-full mb-5 bg-gold/15 text-gold border border-gold/30">
+                    Paid Mentorship · $500
+                  </span>
+                  <h3 className="text-white font-black text-2xl mb-3">
+                    Can&apos;t Wait for a Cohort?
+                  </h3>
+                  <p className="text-secondary text-sm leading-relaxed mb-4">
+                    Start this week with personal 1-on-1 mentorship from David and Dean. Same skills.
+                    Same goal. No waiting list.
+                  </p>
+                  <ul className="space-y-2">
+                    {[
+                      "Start immediately — no cohort schedule",
+                      "Personal mentorship from the founders",
+                      "The exact skills companies are hiring for",
+                      "Placement is the goal for every mentee",
+                    ].map((b) => (
+                      <li key={b} className="flex items-center gap-3 text-secondary text-sm">
+                        <div className="w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="flex flex-col items-start md:items-end gap-4">
+                  <div>
+                    <div className="text-4xl font-black text-white mb-1">$500</div>
+                    <p className="text-secondary text-sm">for the full 6-week programme</p>
+                  </div>
+                  <Link
+                    href="/apply#paid-mentorship"
+                    className="flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-black font-bold text-sm px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-gold/20"
+                  >
+                    Get Started Now
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -567,71 +625,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Footer ── */}
-      <footer className="border-t border-border py-20 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-12 mb-16">
-            <div className="md:col-span-2">
-              <Link href="/" className="flex items-center gap-3 mb-6">
-                <div className="w-9 h-9 bg-gradient-to-br from-gold to-gold-dark rounded-lg flex items-center justify-center">
-                  <span className="text-black font-black text-lg">G</span>
-                </div>
-                <span className="text-white font-bold text-lg">The Gate Project</span>
-              </Link>
-              <p className="text-secondary text-sm leading-relaxed max-w-xs mb-6">
-                Africa&apos;s premier AI talent pipeline. 6 weeks. Real skills.
-                Real placements. No gatekeepers.
-              </p>
-              <p className="text-secondary/60 text-xs">thegateproject.africa</p>
-            </div>
-
-            <div>
-              <h4 className="text-white font-bold text-sm mb-5">Programme</h4>
-              <ul className="space-y-3">
-                {[
-                  ["Learner Path", "/apply?track=learner"],
-                  ["Intern Path", "/apply?track=intern"],
-                  ["Alumni", "/alumni"],
-                  ["Blog", "/blog"],
-                ].map(([label, href]) => (
-                  <li key={label}>
-                    <Link href={href} className="text-secondary hover:text-white text-sm transition-colors">
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-white font-bold text-sm mb-5">Company</h4>
-              <ul className="space-y-3">
-                {[
-                  ["About", "/about"],
-                  ["The Founders", "/about#founders"],
-                  ["Contact", "/contact"],
-                  ["Privacy Policy", "/privacy"],
-                ].map(([label, href]) => (
-                  <li key={label}>
-                    <Link href={href} className="text-secondary hover:text-white text-sm transition-colors">
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-secondary/60 text-xs">
-              © {new Date().getFullYear()} The Gate Project. All rights reserved.
-            </p>
-            <p className="text-secondary/60 text-xs">
-              Built for Africa. Trusted by the World.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

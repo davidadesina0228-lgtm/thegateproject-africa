@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Flag, Building2, ExternalLink, Wrench } from "lucide-react";
+import { ArrowRight, Flag, Building2, ExternalLink, Wrench } from "lucide-react"; // Building2 used in company badge
 import { SiteFooter } from "@/components/marketing/SiteFooter";
 import { SiteNav } from "@/components/marketing/SiteNav";
 
@@ -285,36 +285,20 @@ export default function AlumniPage() {
                   </div>
                 </div>
 
-                {/* Bottom: what they built */}
-                <div className="border-t border-border grid md:grid-cols-2 gap-0">
-                  <div className="p-8 lg:p-10 border-b md:border-b-0 md:border-r border-border">
-                    <div className="flex items-center gap-2 mb-5">
-                      <Wrench className="w-4 h-4 text-gold" />
-                      <h3 className="text-white font-bold text-sm uppercase tracking-wider">Built During Training</h3>
-                    </div>
-                    <ul className="space-y-2">
-                      {grad.trainingProjects.map((p) => (
-                        <li key={p} className="flex items-start gap-2 text-secondary text-sm leading-relaxed">
-                          <span className="w-1.5 h-1.5 rounded-full bg-gold/50 mt-1.5 flex-shrink-0" />
-                          {p}
-                        </li>
-                      ))}
-                    </ul>
+                {/* Bottom: projects built */}
+                <div className="border-t border-border p-8 lg:p-10">
+                  <div className="flex items-center gap-2 mb-5">
+                    <Wrench className="w-4 h-4 text-gold" />
+                    <h3 className="text-white font-bold text-sm uppercase tracking-wider">Projects Built</h3>
                   </div>
-                  <div className="p-8 lg:p-10">
-                    <div className="flex items-center gap-2 mb-5">
-                      <Building2 className="w-4 h-4 text-gold" />
-                      <h3 className="text-white font-bold text-sm uppercase tracking-wider">Built at Placement</h3>
-                    </div>
-                    <ul className="space-y-2">
-                      {grad.placementProjects.map((p) => (
-                        <li key={p} className="flex items-start gap-2 text-secondary text-sm leading-relaxed">
-                          <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 flex-shrink-0" />
-                          {p}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-2">
+                    {[...grad.trainingProjects, ...grad.placementProjects].map((p) => (
+                      <li key={p} className="flex items-start gap-2 text-secondary text-sm leading-relaxed">
+                        <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 flex-shrink-0" />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </motion.div>
             ))}
