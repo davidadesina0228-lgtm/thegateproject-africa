@@ -6,6 +6,7 @@ import Image from "next/image";
 const programmeLinks = [
   ["Learner Path", "/apply?track=learner"],
   ["Intern Path", "/apply?track=intern"],
+  ["Paid Mentorship", "/apply#paid-mentorship"],
   ["Alumni", "/alumni"],
   ["Blog", "/blog"],
 ];

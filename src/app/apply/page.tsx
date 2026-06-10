@@ -177,16 +177,32 @@ export default function ApplyPage() {
                 Get Placed.
               </span>
             </h1>
-            <p className="text-lg md:text-2xl text-secondary max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-2xl text-secondary max-w-3xl mx-auto leading-relaxed mb-10">
               Free scholarship for those who qualify. Paid personal mentorship for those who want to
               start now. Both paths lead to the same place — real AI skills and real placements.
             </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="#scholarship"
+                className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-black font-bold text-base px-8 py-4 rounded-xl transition-all shadow-xl shadow-gold/25"
+              >
+                Apply for Free Scholarship
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <a
+                href="#paid-mentorship"
+                className="inline-flex items-center gap-2 bg-transparent border border-gold/40 hover:border-gold text-gold hover:text-white font-bold text-base px-8 py-4 rounded-xl transition-all"
+              >
+                $100 Paid Mentorship
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Free Scholarship Tracks */}
-      <section className="pb-12 px-6 lg:px-8">
+      <section id="scholarship" className="pb-12 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
