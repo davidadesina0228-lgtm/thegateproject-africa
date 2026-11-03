@@ -16,7 +16,6 @@ export function SiteFooter() {
           <Link href="/about">Our story</Link>
           <Link href="/alumni">Alumni</Link>
           <Link href="/blog">Journal</Link>
-          <Link href="/apply#paid-mentorship">Mentorship</Link>
           <Link href="/auth/login">Sign in <ArrowUpRight size={14} aria-hidden="true" /></Link>
         </nav>
       </div>

@@ -238,7 +238,6 @@ function Pathways() {
         </div>
         <div className={styles.pathwaysNote}>
           <p>Selection is by interview. Placement support is included; employment is not guaranteed.</p>
-          <Link href="/apply#paid-mentorship">Looking for paid mentorship? <ArrowRight size={16} aria-hidden="true" /></Link>
         </div>
       </div>
     </section>
