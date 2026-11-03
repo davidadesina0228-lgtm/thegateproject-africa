@@ -99,7 +99,7 @@ export default function ApplyPage() {
           <p>A fully funded, six-week AI programme for African professionals ready to put their ambition to work.</p>
           <p>If you are selected, your training is completely free. You build practical skills and a portfolio, with support to connect with international companies.</p>
           <a href="#scholarship" className={styles.button}>Explore the scholarship <ArrowDown size={17} aria-hidden="true" /></a>
-          <a href="#paid-mentorship" className={styles.subtleLink}>Also available: $300 mentorship <ArrowUpRight size={15} aria-hidden="true" /></a>
+          <a href="#paid-mentorship" className={styles.subtleLink}>Rather not wait for a place? $300 mentorship <ArrowUpRight size={15} aria-hidden="true" /></a>
         </Reveal>
       </section>
 
@@ -137,7 +137,7 @@ export default function ApplyPage() {
       <section id="paid-mentorship" className={`${styles.container} ${styles.mentorship}`} aria-labelledby="mentorship-title">
         <Reveal className={styles.sectionHeading}>
           <div><p className={styles.eyebrow}>03 / Another way in</p><h2 id="mentorship-title">The same skills.<br /><em>A different starting point.</em></h2></div>
-          <p>The scholarship is selective. Paid mentorship offers another route to learn with the founders and build practical experience.</p>
+          <p>For anyone who would rather not wait for a scholarship place. If you have the means, you can train with the founders outside the scholarship programme.</p>
         </Reveal>
         <div className={styles.mentorshipGrid}>
           <Reveal className={styles.mentorshipInfo}>
