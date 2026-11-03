@@ -258,7 +258,7 @@
   {
     // Generic profile — no personal documentation supplied yet. Swap in her own details when available.
     name: "Keziah",
-    role: "AI Automation & GEO Graduate",
+    role: "AI Automation & Voice Agent Builder",
     company: null as string | null,
     companyUrl: null,
     nationality: "Nigerian",
@@ -267,15 +267,16 @@
     background: "Completed the full six-week Gate Project programme.",
     quote: null as string | null,
     story:
-      "Keziah completed the six-week Gate Project programme, learning AI automation with n8n from David and GEO, lead generation and content strategy from Dean, and graduated from the programme.",
-    projectsLabel: "Programme Focus",
+      "Keziah completed the six-week Gate Project programme and built automations for real business use cases, including a client event-registration system, a recruitment screening agent, an HR helpdesk chatbot, a property-matching assistant and a speed-to-lead voice agent.",
     trainingProjects: [
-      "AI automation workflows built with n8n",
-      "GEO — structuring content for visibility in AI-powered search",
-      "Lead generation and content strategy",
+      "Event Registration Automation (client project) — Tally form → Google Sheets → Gmail confirmation → team notification",
+      "CV Screening & Candidate Triage Agent — built for recruitment agencies and volume-hiring use cases",
+      "HR Helpdesk Chatbot — built step by step",
+      "Real Estate Lead & Property Matcher — RentCast API plus an AI agent that automatically sends a shortlist",
+      "Speed-to-Lead Voice Agent — n8n plus Vapi, with demo calls to a Nigerian number and a web-call option",
     ],
     placementProjects: [],
-    skills: ["AI Automation", "GEO", "n8n", "Lead Generation", "Content Strategy"],
+    skills: ["n8n", "AI Agents", "Voice Agents", "Vapi", "Lead Generation", "Recruitment Automation"],
   },
   {
     name: "Abasifreke Umoh",
