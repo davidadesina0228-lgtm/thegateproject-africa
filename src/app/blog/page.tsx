@@ -8,7 +8,7 @@ import styles from "./journal.module.css";
 import { blogPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
-  title: "Blog | The Gate Project",
+  title: "Blog — AI Automation, GEO & African Talent",
   description:
     "Insights on AI automation, GEO, n8n workflows, and how African professionals are landing remote roles at Western companies.",
   alternates: { canonical: "https://thegateproject.africa/blog" },

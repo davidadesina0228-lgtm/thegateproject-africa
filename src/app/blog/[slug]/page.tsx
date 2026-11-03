@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
   const canonicalUrl = `https://thegateproject.africa/blog/${slug}`;
   return {
-    title: `${post.title} | The Gate Project`,
+    title: post.title,
     description: post.metaDescription,
     authors: [{ name: post.author }],
     alternates: { canonical: canonicalUrl },

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About The Gate Project | Africa's AI Talent Pipeline",
+  title: "About Us — Africa's AI Talent Pipeline",
   description:
     "Learn how The Gate Project trains African professionals in AI automation, GEO, and n8n — then places them in Western companies. Meet founders David Adesina and Dean Whitby. 15+ graduate placements since May.",
   alternates: { canonical: "https://thegateproject.africa/about" },
