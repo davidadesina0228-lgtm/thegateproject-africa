@@ -62,7 +62,7 @@ export default function PostContent() {
 
       <h2>Who Goes Through the Gate</h2>
       <p>
-        Graduates have come from Nigeria and Cape Verde, and from very different starting points: a healthcare
+        Graduates have come from Nigeria, Cape Verde and Ethiopia, and from very different starting points: a healthcare
         professional, a medical student, an electrical engineer, a finance and operations specialist, and people who
         had only used ChatGPT for basic tasks. What they have in common is not a background. It is a willingness to
         build.

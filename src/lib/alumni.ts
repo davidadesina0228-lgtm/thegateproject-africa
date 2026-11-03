@@ -311,6 +311,31 @@
       "Financial Controls",
     ],
   },
+  {
+    name: "Daniel Biru",
+    role: "AI Automation & GEO Builder",
+    company: null as string | null,
+    companyUrl: null,
+    nationality: "Ethiopian",
+    placedMonth: "Gate Project Graduate",
+    photo: "/alumni/daniel.jpg",
+    background: "Completed the n8n automation and Claude AI courses at The Gate Project.",
+    quote:
+      "I particularly enjoyed working on real-world projects because they helped me understand how AI and automation can solve business challenges, improve efficiency, and reduce manual work.",
+    story:
+      "Daniel built hands-on, AI-powered workflows in n8n, then went on to learn AI visibility and Generative Engine Optimization (GEO) and how to build custom Claude skills. His projects range from a fault registration system to an AI interviewer built with n8n and Vapi.",
+    trainingProjects: [
+      "Fault Registration System — an automated system for registering and managing reported faults",
+      "SEO Content Brief Generator — a workflow that generates structured SEO content briefs",
+      "AI Agent — an agent that handles tasks and responds intelligently",
+      "Abandoned Cart Recovery Automation — helps businesses recover abandoned carts and re-engage potential customers",
+      "AI Interviewer — an AI-powered interviewer built with n8n and Vapi that simulates interview conversations",
+      "AI Visibility & GEO — improving how content is discovered by AI-powered search engines and platforms",
+      "Claude Skill Building — building custom Claude skills to extend AI capabilities for specific tasks",
+    ],
+    placementProjects: [],
+    skills: ["n8n", "AI Agents", "GEO", "Claude Skills", "Voice Agents", "Vapi", "SEO Content"],
+  },
 ];
 
 export const alumniStats = [

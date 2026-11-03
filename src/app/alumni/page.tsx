@@ -18,8 +18,8 @@ export default function AlumniPage() {
           </h1>
           <div className={styles.heroBottom}>
             <p>
-              15+ placements since May, with graduates from Nigeria and Cape Verde coming from healthcare, medicine,
-              engineering, finance and more.
+              15+ placements since May, with graduates from Nigeria, Cape Verde and Ethiopia coming from healthcare,
+              medicine, engineering, finance and more.
             </p>
             <p>Here is a selection of what some of them built and where they landed.</p>
           </div>
