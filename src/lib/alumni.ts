@@ -336,6 +336,26 @@
     placementProjects: [],
     skills: ["n8n", "AI Agents", "GEO", "Claude Skills", "Voice Agents", "Vapi", "SEO Content"],
   },
+  {
+    name: "Zaoban",
+    role: "AI Automation Developer",
+    company: null as string | null,
+    companyUrl: null,
+    nationality: "Nigerian",
+    placedMonth: "Gate Project Graduate",
+    photo: null as string | null, // set to "/alumni/zaoban.jpg" once the photo file is added to public/alumni
+    background: "Completed the n8n and AI automation training at The Gate Project.",
+    quote: null as string | null,
+    story:
+      "Zaoban designed and implemented practical AI-powered automations with n8n, connecting AI models, external APIs, Telegram bots and cloud-based data storage to streamline business processes and solve real-world problems.",
+    trainingProjects: [
+      "AI-Powered SEO Content Brief Generator — n8n and Google Gemini, with Serper.dev retrieving Google results and competitor insights; Google Sheets caching reduces redundant API requests and produces structured, writer-ready briefs",
+      "Automated Rental Lead Processing System — n8n and the RentCast API with property matching, lead validation, conditional email notifications and separate paths for successful matches, insufficient information and unsuccessful matches; Google Sheets lead tracking and batch processing for multiple leads",
+      "Weather Lookup Telegram Bot — n8n, the Telegram Bot API and Open-Meteo, returning location-based weather and short-term forecasts with temperature, humidity and precipitation probability in readable responses",
+    ],
+    placementProjects: [],
+    skills: ["n8n", "AI Agents", "Google Gemini", "REST APIs", "Telegram Bots", "Google Sheets Automation", "RAG", "Email Automation"],
+  },
 ];
 
 export const alumniStats = [
