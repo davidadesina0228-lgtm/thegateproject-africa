@@ -109,7 +109,7 @@ export default function PostContent() {
       </p>
       <p>
         There are two tracks. The Learner Path is for candidates with no prior AI experience who want to build skills
-        from the ground up. The Intern Path is for professionals with existing digital or technical skills who want
+        from the ground up. The FDE (Future Development Engineer) Path is for professionals with existing digital or technical skills who want
         to sharpen their positioning and access opportunities directly.
       </p>
       <p>
@@ -137,7 +137,7 @@ export default function PostContent() {
         <dt>How do I apply to The Gate Project?</dt>
         <dd>
           Applications for Cohort 4, which begins in January, are open via the Apply page on this website. There are
-          two tracks: the Learner Path for beginners and the Intern Path for experienced professionals. Applications
+          two tracks: the Learner Path for beginners and the FDE (Future Development Engineer) Path for experienced professionals. Applications
           are reviewed individually and followed up within a few days.
         </dd>
         <dt>Do I need prior AI experience to apply?</dt>

@@ -86,6 +86,20 @@
 .personCaption p { color: var(--home-muted, #64665d); font-size: 12px; margin: 8px 0 4px; }
 .personCaption > span { color: var(--home-ink, #20231f); font-size: 12px; }
 .personStory { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--home-line, #d4d5c9); color: var(--home-muted, #64665d); font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 18px; line-height: 1.5; }
+.moreGraduates { margin-top: 104px; }
+.moreHeader { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 32px; }
+.moreHeader .eyebrow { margin-bottom: 0; }
+.marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+.marqueeTrack { display: flex; width: max-content; animation: marquee 80s linear infinite; }
+.marquee:hover .marqueeTrack { animation-play-state: paused; }
+.marqueeList { display: flex; gap: 28px; padding: 0 28px 0 0; margin: 0; list-style: none; }
+.marqueeItem { width: 180px; flex-shrink: 0; }
+.marqueePhoto { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #dad9d0; }
+.marqueePhoto img { object-fit: cover; object-position: center 20%; filter: grayscale(1); transition: filter 450ms ease, transform 650ms cubic-bezier(.22, 1, .36, 1); }
+.marqueeItem:hover .marqueePhoto img { filter: grayscale(0); transform: scale(1.03); }
+.marqueeName { margin-top: 14px; font-size: 15px; font-weight: 500; letter-spacing: -.025em; color: var(--home-ink, #20231f); }
+.marqueeRole { margin-top: 4px; font-size: 12px; line-height: 1.5; color: var(--home-muted, #64665d); }
+@keyframes marquee { to { transform: translateX(-50%); } }
 .pathways .heading em { color: #d3b877; }
 .pathwayAside { max-width: 300px; color: #b7bbb0; font-size: 15px; line-height: 1.8; }
 .paths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid #51554c; border-bottom: 1px solid #51554c; }
@@ -173,7 +187,19 @@
   .pathwaysNote p { font-size: 12px; }
 }
 
+@media (max-width: 600px) {
+  .moreGraduates { margin-top: 72px; }
+  .moreHeader { flex-direction: column; align-items: flex-start; }
+  .marqueeItem { width: 148px; }
+  .marqueeList { gap: 20px; padding-right: 20px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .marqueeTrack { animation: none; width: auto; }
+  .marqueeList[aria-hidden="true"] { display: none; }
+  .marquee { -webkit-mask-image: none; mask-image: none; width: min(100% - 40px, 1328px); margin-inline: auto; }
+  .marqueeList { flex-wrap: wrap; padding: 0; }
+  .marqueePhoto img { transition: none; }
   .expandIcon, .portrait img, .portraitArrow, .textLink svg, .pathLink svg, .pathwaysNote a svg { transition: none; }
   .personLink:hover img { transform: none; }
 }

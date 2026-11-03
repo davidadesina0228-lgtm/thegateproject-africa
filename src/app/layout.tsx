@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   keywords: [
     "African AI talent",
     "AI training programme Africa",
-    "internship pipeline Africa UK",
+    "Future Development Engineer programme Africa",
     "GEO training Africa",
     "n8n automation Africa",
     "African professionals Western companies",

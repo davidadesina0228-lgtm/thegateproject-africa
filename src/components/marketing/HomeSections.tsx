@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Plus } from "lucide-react";
+import { graduates } from "@/lib/alumni";
 import { Reveal } from "./HomeMotion";
 import styles from "./HomeSections.module.css";
 
@@ -139,6 +140,27 @@ function Journey() {
   );
 }
 
+const featuredNames = new Set(alumni.map((person) => person.name));
+const moreGraduates = graduates.filter(
+  (grad): grad is typeof grad & { photo: string } => Boolean(grad.photo) && !featuredNames.has(grad.name),
+);
+
+function GraduateStrip({ hidden = false }: { hidden?: boolean }) {
+  return (
+    <ul className={styles.marqueeList} aria-label={hidden ? undefined : "More of our graduates"} aria-hidden={hidden || undefined}>
+      {moreGraduates.map((grad) => (
+        <li key={grad.name} className={styles.marqueeItem}>
+          <div className={styles.marqueePhoto}>
+            <Image src={grad.photo} alt={hidden ? "" : grad.name} fill sizes="180px" />
+          </div>
+          <p className={styles.marqueeName}>{grad.name}</p>
+          <p className={styles.marqueeRole}>{grad.role}</p>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function Alumni() {
   return (
     <section id="alumni" className={styles.alumni} aria-labelledby="alumni-title">
@@ -157,7 +179,7 @@ function Alumni() {
           {alumni.map((person, index) => (
             <Reveal key={person.name} className={styles.person} delay={index * 80}>
               <Link href="/alumni" className={styles.personLink} aria-label={`Read about ${person.name} and our alumni`}>
-                <div className={`${styles.portrait} ${index === 0 ? styles.samuel : ""}`}>
+                <div className={`${styles.portrait} ${index === 0 ? styles.samuel : ""}`} data-reveal="image">
                   <Image src={person.photo} alt={person.name} fill sizes="(max-width: 640px) 90vw, (max-width: 900px) 44vw, 30vw" />
                   <span className={styles.portraitLabel}>Alumni</span>
                   <span className={styles.portraitArrow}><ArrowUpRight size={20} aria-hidden="true" /></span>
@@ -173,6 +195,18 @@ function Alumni() {
           ))}
         </div>
       </div>
+      <Reveal className={styles.moreGraduates}>
+        <div className={`${styles.container} ${styles.moreHeader}`}>
+          <p className={styles.eyebrow}>And many more graduates</p>
+          <Link href="/alumni" className={styles.textLink}>See all stories <ArrowUpRight size={18} aria-hidden="true" /></Link>
+        </div>
+        <div className={styles.marquee}>
+          <div className={styles.marqueeTrack}>
+            <GraduateStrip />
+            <GraduateStrip hidden />
+          </div>
+        </div>
+      </Reveal>
     </section>
   );
 }
@@ -197,9 +231,9 @@ function Pathways() {
           </Reveal>
           <Reveal className={styles.path} delay={80}>
             <span className={styles.pathLabel}>Ready for the next step</span>
-            <h3>The Intern Path</h3>
-            <p>Already have digital skills? Sharpen your expertise, demonstrate your work, and prepare for opportunities with international companies.</p>
-            <Link href="/apply?track=intern" className={styles.pathLink}>Apply as an intern <ArrowUpRight size={20} aria-hidden="true" /></Link>
+            <h3>The FDE Path</h3>
+            <p>For Future Development Engineers who already have digital skills. Sharpen your expertise, demonstrate your work, and prepare for opportunities with international companies.</p>
+            <Link href="/apply?track=fde" className={styles.pathLink}>Apply as an FDE <ArrowUpRight size={20} aria-hidden="true" /></Link>
           </Reveal>
         </div>
         <div className={styles.pathwaysNote}>

@@ -87,7 +87,7 @@
 .closing h2 { font-size: clamp(3.5rem, 7vw, 7rem); max-width: 960px; line-height: 1.02; }
 .closingBottom { display: flex; justify-content: space-between; gap: 28px; align-items: end; margin-top: 40px; }
 .closingBottom p { font-size: 13px; line-height: 1.8; }
-.closingMark { position: absolute; font-size: 580px; font-weight: 200; line-height: 1; top: -50px; right: 0; color: #d7d2bf; pointer-events: none; }
+.closingMark { position: absolute; right: -1%; bottom: -.2em; font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 400; font-size: clamp(150px, 21vw, 360px); line-height: 1; letter-spacing: -.06em; white-space: nowrap; color: #dbd5c2; pointer-events: none; user-select: none; }
 .footer { background: var(--home-ink); color: var(--home-paper); padding: 48px 4.5% 24px; }
 .footerTop { display: flex; align-items: start; justify-content: space-between; gap: 36px; padding-bottom: 48px; }
 .footerTop .wordmark { font-size: 19px; }
@@ -98,11 +98,25 @@
 .footerBottom { border-top: 1px solid #44473d; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; gap: 24px; font-size: 9px; color: #c2c4b8; }
 .footerBottom a { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; }
 @keyframes enter { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.polaroid { position: absolute; z-index: 2; left: 39%; bottom: 92px; width: clamp(150px, 13vw, 200px); padding: 10px 10px 0; background: #fbfaf6; box-shadow: 0 22px 44px rgb(20 22 18 / 22%), 0 2px 6px rgb(20 22 18 / 12%); transform: rotate(-7deg); transition: transform 300ms cubic-bezier(.2,.65,.3,1), box-shadow 300ms ease; animation: polaroidIn 1100ms 500ms cubic-bezier(.2,.75,.25,1) backwards; }
+.polaroid:hover { transform: rotate(-4deg) translateY(-6px); box-shadow: 0 28px 52px rgb(20 22 18 / 26%), 0 2px 6px rgb(20 22 18 / 12%); }
+.polaroidPhoto { position: relative; display: block; aspect-ratio: 4 / 5; overflow: hidden; background: #dad9d0; }
+.polaroidPhoto img { object-fit: cover; object-position: center 22%; }
+.polaroidCaption { display: block; padding: 11px 2px 13px; font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: 13px; line-height: 1.35; letter-spacing: -.01em; color: #3a3d35; }
+@keyframes polaroidIn { from { opacity: 0; transform: translateY(-70px) rotate(5deg); } 70% { opacity: 1; transform: translateY(5px) rotate(-8.5deg); } to { opacity: 1; transform: rotate(-7deg); } }
+@supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) { .closingMark { animation: markDrift linear both; animation-timeline: view(); animation-range: entry 0% exit 100%; } } }
+@supports (animation-timeline: scroll()) { @media (prefers-reduced-motion: no-preference) {
+  .header::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--home-gold); transform-origin: left center; transform: scaleX(0); animation: scrollProgress linear both; animation-timeline: scroll(root); pointer-events: none; }
+  @media (min-width: 701px) { .heroContent { animation: heroDrift linear both; animation-timeline: scroll(root); animation-range: 0px 700px; } }
+} }
+@keyframes scrollProgress { to { transform: scaleX(1); } }
+@keyframes heroDrift { to { transform: translateY(-70px); } }
+@keyframes markDrift { from { transform: translateX(10%); } to { transform: translateX(-6%); } }
 @keyframes portraitIn { from { transform: scale(1.045); } to { transform: scale(1); } }
 @supports (animation-timeline: scroll()) { @media (prefers-reduced-motion: no-preference) { .heroPhoto img { animation: portraitScroll linear both; animation-timeline: scroll(root); animation-range: 0px 900px; } } }
 @keyframes portraitScroll { from { transform: scale(1.015) translateY(0); } to { transform: scale(1.1) translateY(5%); } }
 @media (min-width: 1600px) { .hero { padding-top: 90px; padding-bottom: 100px; } .heroTitle { font-size: 120px; } .heroDescription { max-width: 430px; font-size: 16px; } }
-@media (max-width: 1100px) { .header { gap: 20px; } .desktopNav { gap: 22px; } .navActions { gap: 20px; } .hero { min-height: 710px; } .heroTitle { font-size: 7.6vw; } .heroActions { flex-direction: column; align-items: flex-start; gap: 12px; } .heroCaption { width: 36%; right: 5%; } .captionName { font-size: 14px; } .proof { gap: 16px; } .proof > div:not(:first-child) { padding-left: 20px; } .footerTop > p { display: none; } }
+@media (max-width: 1100px) { .polaroid { display: none; } .header { gap: 20px; } .desktopNav { gap: 22px; } .navActions { gap: 20px; } .hero { min-height: 710px; } .heroTitle { font-size: 7.6vw; } .heroActions { flex-direction: column; align-items: flex-start; gap: 12px; } .heroCaption { width: 36%; right: 5%; } .captionName { font-size: 14px; } .proof { gap: 16px; } .proof > div:not(:first-child) { padding-left: 20px; } .footerTop > p { display: none; } }
 @media (max-width: 900px) { .header { height: 76px; gap: 16px; } .desktopNav, .signIn { display: none; } .navActions { margin-left: auto; } .navApply { gap: 18px; } .menuToggle { display: flex; } .mobileNav { display: flex; flex-direction: column; position: absolute; left: 0; right: 0; top: 100%; background: var(--home-paper); padding: 16px 5% 24px; border-bottom: 1px solid var(--home-line); box-shadow: 0 16px 20px rgb(0 0 0 / 5%); } .mobileNav a { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--home-line); font-size: 16px; } .hero { padding-top: 50px; } .heroDescription { max-width: 300px; } .heroPhoto { left: 38%; } .heroContent > .eyebrow { font-size: 8px; } .heroCaption { bottom: 40px; } .captionIndex { font-size: 7px; } .mission { padding-top: 80px; padding-bottom: 80px; } .missionGrid { gap: 6%; } .missionBody p { font-size: 13px; } .people { gap: 7%; padding: 80px 6.5%; } .founders { gap: 16px; } .founder h3 { font-size: 14px; } .footerTop nav { gap: 16px; } }
 @media (max-width: 700px) {
   .header { padding: 0 6%; height: 76px; } .wordmark { font-size: 14px; gap: 7px; } .wordmark img { width: 34px; height: 34px; } .navApply { font-size: 11px; padding: 12px 14px; gap: 12px; } .menuToggle { width: 36px; }
@@ -111,7 +125,7 @@
   .proof { margin: 0 6%; padding: 30px 0; grid-template-columns: 1fr 1fr; gap: 30px 20px; } .proof > div:not(:first-child) { border: none; padding: 0; } .proof > div:nth-child(even) { padding-left: 20px; border-left: 1px solid var(--home-line); } .proof strong { font-size: 32px; } .proof strong span { font-size: 12px; } .proof p { font-size: 9px; } .proofIntro { font-size: 17px; }
   .mission { padding: 64px 6%; } .missionGrid { grid-template-columns: 1fr; gap: 28px; } .home h2 { font-size: 38px; } .mission > div > .eyebrow { margin-bottom: 26px; } .missionBody p { font-size: 14px; }
   .people { grid-template-columns: 1fr; gap: 36px; padding: 64px 6%; } .peopleIntro .eyebrow { font-size: 8px; } .peopleIntro .textLink { margin-top: 20px; } .founderPhoto { aspect-ratio: 4/4.7; } .founder h3 { font-size: 16px; } .founder p { font-size: 9px; }
-  .closing { padding: 64px 6%; } .closing h2 { font-size: clamp(43px, 9vw, 64px); } .closingBottom { flex-direction: column; align-items: flex-start; gap: 26px; margin-top: 30px; } .closingMark { font-size: 400px; top: 20px; right: -90px; }
+  .closing { padding: 64px 6%; } .closing h2 { font-size: clamp(43px, 9vw, 64px); } .closingBottom { flex-direction: column; align-items: flex-start; gap: 26px; margin-top: 30px; } .closingMark { font-size: 36vw; right: -6%; bottom: -.16em; }
   .footer { padding: 40px 6% 24px; } .footerTop { flex-direction: column; gap: 28px; padding-bottom: 28px; } .footerTop nav { display: flex; flex-wrap: wrap; gap: 16px 24px; font-size: 12px; } .footerBottom { flex-direction: column; align-items: flex-start; gap: 12px; font-size: 10px; } .footerBottom > span:last-child { display: none; }
 }
 @media (max-width: 360px) { .header { gap: 10px; } .navApply { padding: 12px; gap: 8px; } .heroActions { gap: 10px; } .heroActions .textLink { font-size: 9px; } .heroTitle { font-size: 11.1vw; } .heroPhoto { height: 340px; } .captionName { font-size: 14px; } .proof strong { font-size: 27px; } .home h2 { font-size: 34px; } .closing h2 { font-size: 39px; } }

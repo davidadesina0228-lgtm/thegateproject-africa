@@ -34,6 +34,12 @@ export default function HomePage() {
             <span className={styles.captionName}>Samuel Oluwatobi Odukoya <ArrowUpRight size={22} aria-hidden="true" /></span>
             <span className={styles.captionRole}>From healthcare to AI Automation Engineer · CH4B, UK</span>
           </Link>
+          <Link href="/alumni" className={styles.polaroid} aria-label="Meet Abasifreke Umoh and more Gate Project graduates">
+            <span className={styles.polaroidPhoto}>
+              <Image src="/alumni/abasifreke.jpg" alt="" fill sizes="200px" />
+            </span>
+            <span className={styles.polaroidCaption}>Abasifreke — from finance to AI automation</span>
+          </Link>
           <a href="#the-opportunity" className={styles.scrollCue}><ArrowDown size={14} aria-hidden="true" /> A new chapter starts here</a>
         </section>
         <section className={styles.proof} aria-label="Programme at a glance">
@@ -63,11 +69,11 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={100} className={styles.founders}>
             <div className={styles.founder}>
-              <div className={styles.founderPhoto}><Image src="/founders/david.jpg" alt="David Adesina" fill sizes="(max-width: 700px) 40vw, 240px" /></div>
+              <div className={styles.founderPhoto} data-reveal="image"><Image src="/founders/david.jpg" alt="David Adesina" fill sizes="(max-width: 700px) 40vw, 240px" /></div>
               <h3>David Adesina</h3><p>Co-founder · AI Automation</p>
             </div>
             <div className={styles.founder}>
-              <div className={styles.founderPhoto}><Image src="/founders/dean.jpg" alt="Dean Whitby" fill sizes="(max-width: 700px) 40vw, 240px" /></div>
+              <div className={styles.founderPhoto} data-reveal="image"><Image src="/founders/dean.jpg" alt="Dean Whitby" fill sizes="(max-width: 700px) 40vw, 240px" /></div>
               <h3>Dean Whitby</h3><p>Co-founder · GEO & Lead Generation</p>
             </div>
           </Reveal>
@@ -81,7 +87,7 @@ export default function HomePage() {
               <Link href="/apply" className={styles.button}>Apply for a scholarship <ArrowUpRight size={20} aria-hidden="true" /></Link>
             </div>
           </Reveal>
-          <span className={styles.closingMark} aria-hidden="true">↗</span>
+          <span className={styles.closingMark} aria-hidden="true">the gate.</span>
         </section>
       </main>
       <footer className={styles.footer}>

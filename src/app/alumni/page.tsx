@@ -44,7 +44,7 @@ export default function AlumniPage() {
               <Reveal key={grad.name}>
                 <article className={styles.graduate} aria-labelledby={`grad-${index}`}>
                   <div className={styles.photoWrap}>
-                    <div className={styles.photo}>
+                    <div className={styles.photo} data-reveal="image">
                       {grad.photo ? (
                         <Image
                           src={grad.photo}
@@ -117,13 +117,6 @@ export default function AlumniPage() {
               </Reveal>
             );
           })}
-
-          <Reveal className={styles.note}>
-            <p>
-              These are some of our graduates, not all of them. Many others have completed the programme and been
-              placed, but not everyone has a photo to share or wants to be featured online.
-            </p>
-          </Reveal>
         </div>
       </section>
 
@@ -143,8 +136,8 @@ export default function AlumniPage() {
                 <Link href="/apply?track=learner" className={styles.button}>
                   Apply as a learner <ArrowUpRight size={18} aria-hidden="true" />
                 </Link>
-                <Link href="/apply?track=intern" className={styles.textLink}>
-                  Apply as an intern <ArrowUpRight size={16} aria-hidden="true" />
+                <Link href="/apply?track=fde" className={styles.textLink}>
+                  Apply as an FDE <ArrowUpRight size={16} aria-hidden="true" />
                 </Link>
               </div>
             </div>

@@ -14,17 +14,17 @@ const scholarshipPaths = [
   {
     title: "The Learner Path",
     subtitle: "For talented beginners ready to build a serious AI portfolio.",
-    bullets: ["No prior AI experience required", "6-week structured training programme", "Hands-on AI automation, GEO, and n8n projects", "Weekly mentorship and portfolio reviews", "Placement support after proof of skill", "Unpaid internship opportunity to add to your CV"],
+    bullets: ["No prior AI experience required", "6-week structured training programme", "Hands-on AI automation, GEO, and n8n projects", "Weekly mentorship and portfolio reviews", "Placement support after proof of skill", "Unpaid FDE placement to add real-world experience to your CV"],
   },
   {
-    title: "The Intern Path",
-    subtitle: "For experienced professionals ready for international opportunities.",
+    title: "The FDE Path",
+    subtitle: "Future Development Engineers: experienced professionals ready for international opportunities.",
     bullets: ["For candidates with existing digital or technical skills", "Profile vetting, positioning, and interview preparation", "Sharpened LinkedIn authority and lead generation systems", "Direct matching with vetted Western companies", "Mentorship while placement conversations progress"],
   },
 ];
 
 const steps = [
-  { title: "Join the conversation.", desc: 'Join our Telegram group and type “Intern” for the free scholarship or “Training” for paid mentorship. We will reach out to you.' },
+  { title: "Join the conversation.", desc: 'Join our Telegram group and type “FDE” for the free scholarship or “Training” for paid mentorship. We will reach out to you.' },
   { title: "Have a short interview.", desc: "We will invite you for a brief conversation to understand your background, your commitment, and what you are aiming for." },
   { title: "Find your place.", desc: "If you pass the interview, you will be added to the Cohort 4 training group and given your start date." },
 ];
@@ -34,7 +34,7 @@ const paidFeatures = [
   "Practical AI automation, GEO, and n8n skills our graduates are being hired for",
   "Taught by the founders, using the same skills they apply in their own work",
   "Placement support throughout your journey; employment is not guaranteed",
-  "Unpaid internship opportunity to add real-world experience to your CV",
+  "Unpaid FDE placement to add real-world experience to your CV",
 ];
 
 function MentorshipForm() {
@@ -99,7 +99,7 @@ export default function ApplyPage() {
           <p>A fully funded, six-week AI programme for African professionals ready to put their ambition to work.</p>
           <p>If you are selected, your training is completely free. You build practical skills and a portfolio, with support to connect with international companies.</p>
           <a href="#scholarship" className={styles.button}>Explore the scholarship <ArrowDown size={17} aria-hidden="true" /></a>
-          <a href="#paid-mentorship" className={styles.subtleLink}>Also available: $100 mentorship <ArrowUpRight size={15} aria-hidden="true" /></a>
+          <a href="#paid-mentorship" className={styles.subtleLink}>Also available: $300 mentorship <ArrowUpRight size={15} aria-hidden="true" /></a>
         </Reveal>
       </section>
 
@@ -142,7 +142,7 @@ export default function ApplyPage() {
         <div className={styles.mentorshipGrid}>
           <Reveal className={styles.mentorshipInfo}>
             <p className={styles.eyebrow}>Personal mentorship / Six weeks</p>
-            <div className={styles.price}>$100<span>for the full programme</span></div>
+            <div className={styles.price}>$300<span>for the full programme</span></div>
             <ul className={styles.featureList}>{paidFeatures.map(feature => <li key={feature}><Check size={16} aria-hidden="true" /><span>{feature}</span></li>)}</ul>
             <p className={styles.scheduleNote}>Classes begin once we reach 20 confirmed participants. The start date and payment are confirmed at that point.</p>
           </Reveal>

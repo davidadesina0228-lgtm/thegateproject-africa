@@ -71,7 +71,7 @@ export default function AboutPage() {
           {founders.map((founder, index) => (
             <Reveal key={founder.name} delay={index * 100}>
               <article className={styles.founder}>
-                <div className={styles.portrait}><Image src={founder.photo} alt={founder.name} fill sizes="(max-width: 700px) 88vw, 40vw" /></div>
+                <div className={styles.portrait} data-reveal="image"><Image src={founder.photo} alt={founder.name} fill sizes="(max-width: 700px) 88vw, 40vw" /></div>
                 <div className={styles.founderDetails}>
                   <h3>{founder.name}</h3>
                   <p className={styles.role}>{founder.role}</p>
