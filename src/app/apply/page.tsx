@@ -2,8 +2,8 @@ import { ArrowDown, ArrowUpRight, Check } from "lucide-react";
 import { MarketingShell } from "@/components/marketing/MarketingShell";
 import { Reveal } from "@/components/marketing/HomeMotion";
 import styles from "./apply.module.css";
+import { telegramLinkProps } from "@/lib/site";
 
-const TELEGRAM_LINK = "https://t.me/Thegateprojectafrica";
 
 const scholarshipPaths = [
   {
@@ -19,7 +19,7 @@ const scholarshipPaths = [
 ];
 
 const steps = [
-  { title: "Join the conversation.", desc: 'Join our Telegram group and type “FDE” for the free scholarship. We will reach out to you.' },
+  { title: "Join the conversation.", desc: 'Join our Telegram group and introduce yourself. Tell us whether you are applying for the Learner Path or the FDE Path, and we will reach out to you.' },
   { title: "Have a short interview.", desc: "We will invite you for a brief conversation to understand your background, your commitment, and what you are aiming for." },
   { title: "Find your place.", desc: "If you pass the interview, you will be added to the Cohort 4 training group and given your start date." },
 ];
@@ -35,7 +35,10 @@ export default function ApplyPage() {
         <Reveal className={styles.heroAside} delay={100}>
           <p>A fully funded, six-week AI programme for African professionals ready to put their ambition to work.</p>
           <p>If you are selected, your training is completely free. You build practical skills and a portfolio, with support to connect with international companies.</p>
-          <a href="#scholarship" className={styles.button}>Explore the scholarship <ArrowDown size={17} aria-hidden="true" /></a>
+          <div className={styles.heroActions}>
+            <a {...telegramLinkProps} className={styles.button}>Join the Telegram group <ArrowUpRight size={17} aria-hidden="true" /></a>
+            <a href="#scholarship" className={styles.pathLink}>Explore the scholarship <ArrowDown size={16} aria-hidden="true" /></a>
+          </div>
         </Reveal>
       </section>
 
@@ -64,7 +67,7 @@ export default function ApplyPage() {
           </Reveal>
           <ol className={styles.steps}>{steps.map((step, index) => <li key={step.title}><Reveal delay={index * 70}><span className={styles.stepIndex}>0{index + 1}</span><h3>{step.title}</h3><p>{step.desc}</p></Reveal></li>)}</ol>
           <Reveal className={styles.telegramRow}>
-            <a href={TELEGRAM_LINK} target="_blank" rel="noopener noreferrer" className={styles.lightButton}>Join the Cohort 4 Telegram group <ArrowUpRight size={18} aria-hidden="true" /></a>
+            <a {...telegramLinkProps} className={styles.lightButton}>Join the Cohort 4 Telegram group <ArrowUpRight size={18} aria-hidden="true" /></a>
             <p>Free to join. Interview required.<br />Limited places available.</p>
           </Reveal>
         </div>

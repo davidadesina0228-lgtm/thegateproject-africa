@@ -24,11 +24,13 @@
 .wordmark img { width: 40px; height: 40px; }
 .wordmarkDot { color: #96722c; }
 .desktopNav { display: flex; gap: 32px; font-size: 13px; }
-.desktopNav a, .signIn { transition: color 180ms ease; }
-.desktopNav a:hover, .signIn:hover { color: #896623; }
+.desktopNav a { transition: color 180ms ease; }
+.desktopNav a:hover { color: #896623; }
 .navActions { display: flex; align-items: center; gap: 28px; font-size: 13px; }
 .navApply { display: flex; gap: 24px; align-items: center; min-height: 44px; padding: 12px 20px; background: var(--home-ink); color: var(--home-paper); transition: background 200ms; }
 .navApply:hover { background: #3c4136; }
+.navApplyLong { white-space: pre; }
+@media (max-width: 420px) { .navApplyLong { display: none; } }
 .menuToggle { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; }
 .mobileNav { display: none; }
 .hero { position: relative; isolation: isolate; min-height: min(810px, calc(100svh - 88px)); padding: 68px 4.5% 82px; display: flex; align-items: center; background: #e9e8e1; }
@@ -117,7 +119,7 @@
 @keyframes portraitScroll { from { transform: scale(1.015) translateY(0); } to { transform: scale(1.1) translateY(5%); } }
 @media (min-width: 1600px) { .hero { padding-top: 90px; padding-bottom: 100px; } .heroTitle { font-size: 120px; } .heroDescription { max-width: 430px; font-size: 16px; } }
 @media (max-width: 1100px) { .polaroid { display: none; } .header { gap: 20px; } .desktopNav { gap: 22px; } .navActions { gap: 20px; } .hero { min-height: 710px; } .heroTitle { font-size: 7.6vw; } .heroActions { flex-direction: column; align-items: flex-start; gap: 12px; } .heroCaption { width: 36%; right: 5%; } .captionName { font-size: 14px; } .proof { gap: 16px; } .proof > div:not(:first-child) { padding-left: 20px; } .footerTop > p { display: none; } }
-@media (max-width: 900px) { .header { height: 76px; gap: 16px; } .desktopNav, .signIn { display: none; } .navActions { margin-left: auto; } .navApply { gap: 18px; } .menuToggle { display: flex; } .mobileNav { display: flex; flex-direction: column; position: absolute; left: 0; right: 0; top: 100%; background: var(--home-paper); padding: 16px 5% 24px; border-bottom: 1px solid var(--home-line); box-shadow: 0 16px 20px rgb(0 0 0 / 5%); } .mobileNav a { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--home-line); font-size: 16px; } .hero { padding-top: 50px; } .heroDescription { max-width: 300px; } .heroPhoto { left: 38%; } .heroContent > .eyebrow { font-size: 8px; } .heroCaption { bottom: 40px; } .captionIndex { font-size: 7px; } .mission { padding-top: 80px; padding-bottom: 80px; } .missionGrid { gap: 6%; } .missionBody p { font-size: 13px; } .people { gap: 7%; padding: 80px 6.5%; } .founders { gap: 16px; } .founder h3 { font-size: 14px; } .footerTop nav { gap: 16px; } }
+@media (max-width: 900px) { .header { height: 76px; gap: 16px; } .desktopNav { display: none; } .navActions { margin-left: auto; } .navApply { gap: 18px; } .menuToggle { display: flex; } .mobileNav { display: flex; flex-direction: column; position: absolute; left: 0; right: 0; top: 100%; background: var(--home-paper); padding: 16px 5% 24px; border-bottom: 1px solid var(--home-line); box-shadow: 0 16px 20px rgb(0 0 0 / 5%); } .mobileNav a { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--home-line); font-size: 16px; } .hero { padding-top: 50px; } .heroDescription { max-width: 300px; } .heroPhoto { left: 38%; } .heroContent > .eyebrow { font-size: 8px; } .heroCaption { bottom: 40px; } .captionIndex { font-size: 7px; } .mission { padding-top: 80px; padding-bottom: 80px; } .missionGrid { gap: 6%; } .missionBody p { font-size: 13px; } .people { gap: 7%; padding: 80px 6.5%; } .founders { gap: 16px; } .founder h3 { font-size: 14px; } .footerTop nav { gap: 16px; } }
 @media (max-width: 700px) {
   .header { padding: 0 6%; height: 76px; } .wordmark { font-size: 14px; gap: 7px; } .wordmark img { width: 34px; height: 34px; } .navApply { font-size: 11px; padding: 12px 14px; gap: 12px; } .menuToggle { width: 36px; }
   .hero { padding: 44px 6% 0; min-height: auto; display: flex; flex-direction: column; } .heroContent { width: 100%; order: -1; } .heroContent > .eyebrow { font-size: 8px; margin-bottom: 25px; } .heroTitle { font-size: clamp(3.3rem, 11vw, 5rem); margin-left: -2px; line-height: 1.04; } .heroTitle > span:nth-child(2) { display: inline; } .heroTitle .serif { display: inline; margin-left: .15em; } .heroDescription { font-size: 13px; max-width: 340px; margin-top: 24px; } .heroActions { flex-direction: row; align-items: center; gap: 16px; margin-top: 24px; } .button { font-size: 12px; padding: 14px 19px; gap: 24px; min-height: 50px; } .heroActions .textLink { font-size: 10px; gap: 8px; } .heroNote { font-size: 9px; margin-top: 16px; }
@@ -137,9 +139,9 @@
 .captionIndex { font-size: 10px; }
 .captionRole { font-size: 12px; }
 .footerBottom { font-size: 11px; }
-.desktopNav a, .signIn { display: inline-flex; align-items: center; min-height: 44px; }
+.desktopNav a { display: inline-flex; align-items: center; min-height: 44px; }
 .footerTop nav a { min-height: 44px; }
-@media (max-width: 900px) { .signIn { display: none; } .menuToggle { width: 44px; flex-shrink: 0; } }
+@media (max-width: 900px) { .menuToggle { width: 44px; flex-shrink: 0; } }
 @media (max-width: 700px) {
   .heroTitle > span:nth-child(2), .heroTitle .serif { display: block; margin-left: 0; }
   .heroContent > .eyebrow { font-size: 9px; }

@@ -1,3 +1,5 @@
+import { telegramLinkProps } from "@/lib/site";
+
 export default function PostContent() {
   return (
     <div>
@@ -169,8 +171,8 @@ export default function PostContent() {
         <dt>Where can I learn this with support?</dt>
         <dd>
           The Gate Project runs a 6-week programme covering AI automation with n8n, GEO, LinkedIn authority and lead
-          generation, with introductions to hiring companies. Cohort 4 begins in January and applications are open on
-          the <a href="/apply">Apply page</a>.
+          generation, with introductions to hiring companies. Cohort 4 begins in January and applications are open in
+          our <a {...telegramLinkProps}>Telegram group</a>.
         </dd>
       </dl>
     </div>

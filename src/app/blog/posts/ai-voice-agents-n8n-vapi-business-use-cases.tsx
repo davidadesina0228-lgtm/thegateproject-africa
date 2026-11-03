@@ -1,3 +1,5 @@
+import { telegramLinkProps } from "@/lib/site";
+
 export default function PostContent() {
   return (
     <div>
@@ -140,7 +142,7 @@ export default function PostContent() {
         <dt>Where can I learn to build these?</dt>
         <dd>
           The Gate Project teaches AI automation with n8n, including voice agents and chatbots, in a 6-week
-          programme. Cohort 4 begins in January. Apply on the <a href="/apply">Apply page</a>.
+          programme. Cohort 4 begins in January. Apply through our <a {...telegramLinkProps}>Telegram group</a>.
         </dd>
       </dl>
     </div>

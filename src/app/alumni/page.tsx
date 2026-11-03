@@ -5,6 +5,7 @@ import { MarketingShell } from "@/components/marketing/MarketingShell";
 import { Reveal } from "@/components/marketing/HomeMotion";
 import { alumniStats, graduates } from "@/lib/alumni";
 import styles from "./alumni.module.css";
+import { telegramLinkProps } from "@/lib/site";
 
 export default function AlumniPage() {
   return (
@@ -133,11 +134,11 @@ export default function AlumniPage() {
                 changed was stepping through the gate.
               </p>
               <div className={styles.actions}>
-                <Link href="/apply?track=learner" className={styles.button}>
-                  Apply as a learner <ArrowUpRight size={18} aria-hidden="true" />
-                </Link>
-                <Link href="/apply?track=fde" className={styles.textLink}>
-                  Apply as an FDE <ArrowUpRight size={16} aria-hidden="true" />
+                <a {...telegramLinkProps} className={styles.button}>
+                  Join us on Telegram <ArrowUpRight size={18} aria-hidden="true" />
+                </a>
+                <Link href="/apply" className={styles.textLink}>
+                  How applying works <ArrowUpRight size={16} aria-hidden="true" />
                 </Link>
               </div>
             </div>

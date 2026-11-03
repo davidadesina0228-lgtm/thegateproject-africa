@@ -5,6 +5,7 @@ import { HomeNav } from "@/components/marketing/HomeNav";
 import { Reveal } from "@/components/marketing/HomeMotion";
 import { HomeSections } from "@/components/marketing/HomeSections";
 import styles from "./home.module.css";
+import { telegramLinkProps } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -24,10 +25,10 @@ export default function HomePage() {
             </h1>
             <p className={styles.heroDescription}>Your ambition deserves a way forward. Build practical AI skills, work on real projects, and connect with international companies.</p>
             <div className={styles.heroActions}>
-              <Link href="/apply" className={styles.button}>Find your way in <ArrowUpRight size={18} aria-hidden="true" /></Link>
+              <a {...telegramLinkProps} className={styles.button}>Join us on Telegram <ArrowUpRight size={18} aria-hidden="true" /></a>
               <a href="#programme" className={styles.textLink}>Explore the programme <ArrowDown size={16} aria-hidden="true" /></a>
             </div>
-            <p className={styles.heroNote}>6 weeks. Fully funded for selected applicants.</p>
+            <p className={styles.heroNote}>6 weeks. Fully funded for selected applicants. Applications start in our Telegram group.</p>
           </div>
           <Link href="/alumni" className={styles.heroCaption} aria-label="Meet Samuel and the Gate Project alumni">
             <span className={styles.captionIndex}>01 / THE PEOPLE BEHIND THE PROGRESS</span>
@@ -84,7 +85,7 @@ export default function HomePage() {
             <h2 id="closing-heading">There’s a place<br />for <em>your potential.</em></h2>
             <div className={styles.closingBottom}>
               <p>Bring your curiosity. Bring your commitment.<br />Let’s see where they can take you.</p>
-              <Link href="/apply" className={styles.button}>Apply for a scholarship <ArrowUpRight size={20} aria-hidden="true" /></Link>
+              <a {...telegramLinkProps} className={styles.button}>Join the Telegram group <ArrowUpRight size={20} aria-hidden="true" /></a>
             </div>
           </Reveal>
           <span className={styles.closingMark} aria-hidden="true">the gate.</span>
@@ -94,9 +95,9 @@ export default function HomePage() {
         <div className={styles.footerTop}>
           <Link href="/" className={styles.wordmark} aria-label="The Gate Project home"><Image src="/nav-logo.png" alt="" width={44} height={44} /><span>The Gate<br />Project<span className={styles.wordmarkDot}>.</span></span></Link>
           <p>Built for Africa.<br />Open to the world.</p>
-          <nav aria-label="Footer navigation"><Link href="/about">Our story</Link><Link href="/alumni">Alumni</Link><Link href="/blog">Journal</Link><Link href="/auth/login">Sign in <ArrowUpRight size={14} aria-hidden="true" /></Link></nav>
+          <nav aria-label="Footer navigation"><Link href="/about">Our story</Link><Link href="/alumni">Alumni</Link><Link href="/blog">Journal</Link><Link href="/apply">How to apply</Link></nav>
         </div>
-        <div className={styles.footerBottom}><span>© {new Date().getFullYear()} The Gate Project</span><a href="https://t.me/Thegateprojectafrica" target="_blank" rel="noopener noreferrer">Join our Telegram community <ArrowRight size={14} aria-hidden="true" /></a><span>Talent is everywhere. Let’s open doors.</span></div>
+        <div className={styles.footerBottom}><span>© {new Date().getFullYear()} The Gate Project</span><a {...telegramLinkProps}>Join our Telegram community <ArrowRight size={14} aria-hidden="true" /></a><span>Talent is everywhere. Let’s open doors.</span></div>
       </footer>
     </div>
   );

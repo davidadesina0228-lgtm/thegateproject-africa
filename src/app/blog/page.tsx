@@ -5,6 +5,7 @@ import { ArrowUpRight, Clock } from "lucide-react";
 import { MarketingShell } from "@/components/marketing/MarketingShell";
 import { Reveal } from "@/components/marketing/HomeMotion";
 import styles from "./journal.module.css";
+import { telegramLinkProps } from "@/lib/site";
 import { blogPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
@@ -82,7 +83,7 @@ export default function BlogPage() {
             <Reveal>
               <p className={styles.eyebrow}>Your next chapter / Cohort 4</p>
               <h2 id="journal-cta-title">Take what you learn.<br /><em>Build something real.</em></h2>
-              <div className={styles.ctaBottom}><p>Cohort 4 begins in January and applications are open. Six weeks of training, a real portfolio, and support connecting with international companies.</p><Link href="/apply" className={styles.button}>Apply for Cohort 4 <ArrowUpRight size={18} aria-hidden="true" /></Link></div>
+              <div className={styles.ctaBottom}><p>Cohort 4 begins in January and applications are open. Six weeks of training, a real portfolio, and support connecting with international companies.</p><a {...telegramLinkProps} className={styles.button}>Join us on Telegram <ArrowUpRight size={18} aria-hidden="true" /></a></div>
             </Reveal>
           </div>
         </section>

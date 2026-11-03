@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { ArrowLeft, ArrowUpRight, Clock, Calendar } from "lucide-react";
 import { MarketingShell } from "@/components/marketing/MarketingShell";
 import styles from "../journal.module.css";
+import { telegramLinkProps } from "@/lib/site";
 import { blogPosts, getPostBySlug } from "@/lib/blog-posts";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -147,7 +148,7 @@ export default async function BlogPostPage({ params }: Props) {
           <p className={styles.eyebrow}>The Gate Project / Cohort 4</p>
           <h2 id="article-cta-title">Put your curiosity<br /><em>to work.</em></h2>
           <p>The Gate Project is a 6-week AI training and placement programme. We teach AI automation, GEO, n8n workflows, and LinkedIn authority, then connect graduates with international companies. Cohort 4 begins in January and applications are open.</p>
-          <Link href="/apply" className={styles.button}>Apply now <ArrowUpRight size={18} aria-hidden="true" /></Link>
+          <a {...telegramLinkProps} className={styles.button}>Join us on Telegram <ArrowUpRight size={18} aria-hidden="true" /></a>
         </aside>
 
         {relatedPosts.length > 0 && (

@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, Plus } from "lucide-react";
 import { graduates } from "@/lib/alumni";
 import { Reveal } from "./HomeMotion";
 import styles from "./HomeSections.module.css";
+import { telegramLinkProps } from "@/lib/site";
 
 const curriculum = [
   {
@@ -227,13 +228,13 @@ function Pathways() {
             <span className={styles.pathLabel}>Starting something new</span>
             <h3>The Learner Path</h3>
             <p>No AI experience required. Build your foundations, work on practical projects, and develop a portfolio with support along the way.</p>
-            <Link href="/apply?track=learner" className={styles.pathLink}>Apply as a learner <ArrowUpRight size={20} aria-hidden="true" /></Link>
+            <a {...telegramLinkProps} className={styles.pathLink}>Apply as a learner on Telegram <ArrowUpRight size={20} aria-hidden="true" /></a>
           </Reveal>
           <Reveal className={styles.path} delay={80}>
             <span className={styles.pathLabel}>Ready for the next step</span>
             <h3>The FDE Path</h3>
             <p>For Future Development Engineers who already have digital skills. Sharpen your expertise, demonstrate your work, and prepare for opportunities with international companies.</p>
-            <Link href="/apply?track=fde" className={styles.pathLink}>Apply as an FDE <ArrowUpRight size={20} aria-hidden="true" /></Link>
+            <a {...telegramLinkProps} className={styles.pathLink}>Apply as an FDE on Telegram <ArrowUpRight size={20} aria-hidden="true" /></a>
           </Reveal>
         </div>
         <div className={styles.pathwaysNote}>

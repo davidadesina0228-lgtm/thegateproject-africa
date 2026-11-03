@@ -1,7 +1,8 @@
 ﻿import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import styles from "@/app/home.module.css";
+import { telegramLinkProps } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -16,12 +17,12 @@ export function SiteFooter() {
           <Link href="/about">Our story</Link>
           <Link href="/alumni">Alumni</Link>
           <Link href="/blog">Journal</Link>
-          <Link href="/auth/login">Sign in <ArrowUpRight size={14} aria-hidden="true" /></Link>
+          <Link href="/apply">How to apply</Link>
         </nav>
       </div>
       <div className={styles.footerBottom}>
         <span>© {new Date().getFullYear()} The Gate Project</span>
-        <a href="https://t.me/Thegateprojectafrica" target="_blank" rel="noopener noreferrer">Join our Telegram community <ArrowRight size={14} aria-hidden="true" /></a>
+        <a {...telegramLinkProps}>Join our Telegram community <ArrowRight size={14} aria-hidden="true" /></a>
         <span>Talent is everywhere. Let’s open doors.</span>
       </div>
     </footer>

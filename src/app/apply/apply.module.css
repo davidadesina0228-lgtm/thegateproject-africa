@@ -8,6 +8,8 @@
 .heroAside > p:first-child { font-size: 19px; color: var(--home-ink); line-height: 1.6; }
 .button, .lightButton { display: inline-flex; min-height: 52px; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 24px; background: var(--home-ink); color: var(--home-paper); font-size: 13px; font-weight: 500; transition: background 200ms, transform 200ms; }
 .button { margin-top: 8px; }
+.heroActions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 8px; }
+.heroActions .button { margin-top: 0; }
 .button:hover { background: #3c4136; }
 .button svg, .lightButton svg, .pathLink svg { flex-shrink: 0; transition: transform 200ms; }
 .button:hover svg, .lightButton:hover svg, .pathLink:hover svg { transform: translate(2px, -2px); }

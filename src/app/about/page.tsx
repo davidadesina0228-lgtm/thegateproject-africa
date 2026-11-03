@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { MarketingShell } from "@/components/marketing/MarketingShell";
 import { Reveal } from "@/components/marketing/HomeMotion";
 import styles from "./about.module.css";
+import { telegramLinkProps } from "@/lib/site";
 
 const founders = [
   {
@@ -115,7 +116,7 @@ export default function AboutPage() {
           <h2 id="closing-heading">Make your next move<br /><em>mean something.</em></h2>
           <div className={styles.closingBottom}>
             <p>Choose the path that fits where you are now. Build practical skills, real deliverables, and the confidence to pursue international opportunities.</p>
-            <Link href="/apply" className={styles.button}>Apply for a scholarship <ArrowUpRight size={20} aria-hidden="true" /></Link>
+            <a {...telegramLinkProps} className={styles.button}>Join the Telegram group <ArrowUpRight size={20} aria-hidden="true" /></a>
           </div>
         </Reveal>
       </section>
