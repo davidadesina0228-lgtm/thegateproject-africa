@@ -28,7 +28,7 @@ export default function HomePage() {
               <a {...telegramLinkProps} className={styles.button}>Join us on Telegram <ArrowUpRight size={18} aria-hidden="true" /></a>
               <a href="#programme" className={styles.textLink}>Explore the programme <ArrowDown size={16} aria-hidden="true" /></a>
             </div>
-            <p className={styles.heroNote}>6 weeks. Fully funded for selected applicants. Applications start in our Telegram group.</p>
+            <p className={styles.heroNote}>Cohort 4 begins in January. Six weeks, fully funded for selected applicants.</p>
           </div>
           <Link href="/alumni" className={styles.heroCaption} aria-label="Meet Samuel and the Gate Project alumni">
             <span className={styles.captionIndex}>01 / THE PEOPLE BEHIND THE PROGRESS</span>
@@ -81,7 +81,7 @@ export default function HomePage() {
         </section>
         <section className={styles.closing} aria-labelledby="closing-heading">
           <Reveal>
-            <p className={styles.eyebrow}>Your next chapter</p>
+            <p className={styles.eyebrow}>Cohort 4 begins in January</p>
             <h2 id="closing-heading">There’s a place<br />for <em>your potential.</em></h2>
             <div className={styles.closingBottom}>
               <p>Bring your curiosity. Bring your commitment.<br />Let’s see where they can take you.</p>

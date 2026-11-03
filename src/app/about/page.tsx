@@ -112,7 +112,7 @@ export default function AboutPage() {
 
       <section className={styles.closing} aria-labelledby="closing-heading">
         <Reveal className={styles.container}>
-          <p className={styles.eyebrow}>Apply for Cohort 4</p>
+          <p className={styles.eyebrow}>Cohort 4 begins in January</p>
           <h2 id="closing-heading">Make your next move<br /><em>mean something.</em></h2>
           <div className={styles.closingBottom}>
             <p>Choose the path that fits where you are now. Build practical skills, real deliverables, and the confidence to pursue international opportunities.</p>

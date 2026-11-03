@@ -19,6 +19,15 @@
 .home h2 em { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; letter-spacing: -.045em; }
 .skipLink { position: fixed; z-index: 100; top: 8px; left: 16px; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; color: var(--home-paper); background: var(--home-ink); }
 .skipLink:focus { width: auto; height: auto; clip-path: none; padding: 16px 24px; }
+.announce { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; padding: 8px 4.5%; background: var(--home-ink); color: var(--home-paper); font-size: 12px; letter-spacing: .02em; text-align: center; transition: background 200ms; }
+.announce:hover { background: #2f332c; }
+.announce:hover svg { transform: translate(2px, -2px); }
+.announce svg { flex-shrink: 0; color: #d3b877; transition: transform 200ms; }
+.announceDot { width: 7px; height: 7px; border-radius: 50%; background: #d3b877; box-shadow: 0 0 0 0 rgb(211 184 119 / 60%); animation: announcePulse 2.4s ease-out infinite; flex-shrink: 0; }
+.announceSep { color: #8f9286; }
+.announceMore { color: #d7d5ca; }
+@keyframes announcePulse { 0% { box-shadow: 0 0 0 0 rgb(211 184 119 / 55%); } 70%, 100% { box-shadow: 0 0 0 8px rgb(211 184 119 / 0%); } }
+@media (max-width: 560px) { .announceSep, .announceMore { display: none; } }
 .header { position: sticky; top: 0; z-index: 50; height: 88px; padding: 0 4.5%; display: flex; justify-content: space-between; align-items: center; gap: 32px; border-bottom: 1px solid var(--home-line); background: rgb(243 241 233 / 96%); backdrop-filter: blur(16px); }
 .wordmark { display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; font-size: 17px; font-weight: 600; line-height: 1.05; letter-spacing: -.6px; }
 .wordmark img { width: 40px; height: 40px; }
@@ -33,7 +42,7 @@
 @media (max-width: 420px) { .navApplyLong { display: none; } }
 .menuToggle { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; }
 .mobileNav { display: none; }
-.hero { position: relative; isolation: isolate; min-height: min(810px, calc(100svh - 88px)); padding: 68px 4.5% 82px; display: flex; align-items: center; background: #e9e8e1; }
+.hero { position: relative; isolation: isolate; min-height: min(810px, calc(100svh - 132px)); padding: 68px 4.5% 82px; display: flex; align-items: center; background: #e9e8e1; }
 .heroPhoto { position: absolute; z-index: -2; inset: 0 0 0 42%; overflow: hidden; background: #cfceca; }
 .heroPhoto img { object-fit: cover; object-position: 61% center; mix-blend-mode: multiply; animation: portraitIn 1.4s cubic-bezier(.2,.65,.3,1) both; }
 .heroPhoto::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #e9e8e1 0%, rgb(233 232 225 / 82%) 9%, transparent 32%), linear-gradient(0deg, rgb(15 17 14 / 65%), transparent 31%); }

@@ -29,7 +29,7 @@ export default function ApplyPage() {
     <MarketingShell>
       <section className={`${styles.container} ${styles.hero}`} aria-labelledby="apply-title">
         <Reveal>
-          <p className={styles.eyebrow}>The Gate Project / Cohort 4</p>
+          <p className={styles.eyebrow}>Cohort 4 / Begins January 2027</p>
           <h1 id="apply-title">Your next chapter<br /><em>starts here.</em></h1>
         </Reveal>
         <Reveal className={styles.heroAside} delay={100}>
@@ -45,7 +45,7 @@ export default function ApplyPage() {
       <section id="scholarship" className={`${styles.container} ${styles.scholarship}`} aria-labelledby="scholarship-title">
         <Reveal className={styles.sectionHeading}>
           <div><p className={styles.eyebrow}>01 / The scholarship</p><h2 id="scholarship-title">Two starting points.<br /><em>One way forward.</em></h2></div>
-          <p>Apply for Cohort 4.<br />Competitive selection. Free training.<br />Real placement support.</p>
+          <p>Apply for Cohort 4, starting in January.<br />Competitive selection. Free training.<br />Real placement support.</p>
         </Reveal>
         <div className={styles.paths}>
           {scholarshipPaths.map((path, index) => (
