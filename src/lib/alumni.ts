@@ -258,24 +258,24 @@
   {
     // Generic profile — no personal documentation supplied yet. Swap in her own details when available.
     name: "Keziah",
-    role: "AI Automation & GEO Graduate",
+    role: "AI Automation & AI Visibility Specialist",
     company: null as string | null,
     companyUrl: null,
     nationality: "Nigerian",
     placedMonth: "Gate Project Graduate",
     photo: "/alumni/keziah.jpg",
-    background: "Completed the full six-week Gate Project programme.",
-    quote: null as string | null,
+    background: "Helps small business owners get seen. Joined the automation specialist scholarship programme.",
+    quote:
+      "I came in curious and left with real, working skills.",
     story:
-      "Keziah completed the six-week Gate Project programme, learning AI automation with n8n from David and GEO, lead generation and content strategy from Dean, and graduated from the programme.",
-    projectsLabel: "Programme Focus",
+      "Keziah built working automations that move data, trigger actions and save time, learning how to connect tools that don't naturally talk to each other and to test with sample data before showing anything to a client. She also learned how AI tools find, read and recommend businesses, and what it takes for a brand to show up in those answers. For someone who helps small business owners get seen, it changed how she thinks about visibility: search is no longer the only door.",
+    projectsLabel: "Projects & focus",
     trainingProjects: [
-      "AI automation workflows built with n8n",
-      "GEO — structuring content for visibility in AI-powered search",
-      "Lead generation and content strategy",
+      "Shipment Delay Monitor & Notifier — an n8n workflow that pulls tracking updates through Ship24, logs everything in Google Sheets, sends alerts through Gmail, and uses an AI agent to make sense of delays; a voice agent that calls customers with updates is the planned next step",
+      "AI Visibility — how AI tools find, read and recommend businesses, and what it takes for a brand to appear in those answers",
     ],
     placementProjects: [],
-    skills: ["AI Automation", "GEO", "n8n", "Lead Generation", "Content Strategy"],
+    skills: ["n8n", "AI Agents", "AI Visibility", "GEO", "Google Sheets Automation", "Gmail Automation", "API Integrations"],
   },
   {
     name: "Abasifreke Umoh",
