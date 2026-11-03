@@ -356,6 +356,27 @@
     placementProjects: [],
     skills: ["n8n", "AI Agents", "Google Gemini", "REST APIs", "Telegram Bots", "Google Sheets Automation", "RAG", "Email Automation"],
   },
+  {
+    name: "Blessing Emmanuel",
+    role: "Data Analyst & AI Automation Builder",
+    company: null as string | null,
+    companyUrl: null,
+    nationality: "Nigerian",
+    placedMonth: "Gate Project Graduate",
+    photo: "/alumni/blessing.jpg",
+    background: "Data analyst with 7+ years of experience. Joined to add AI automation to her skill set.",
+    quote:
+      "I’d recommend Gate Project Africa to anyone who wants practical AI skills, and I’m grateful it was free.",
+    story:
+      "After more than seven years as a data analyst, Blessing joined The Gate Project's free six-week training to add AI automation to her toolkit. The training covered n8n, Claude and GEO, and it was hands-on: rather than piling up notes, she built with what she learned, from an AI appointment tracker to insurance triage systems and voice agents.",
+    trainingProjects: [
+      "AI Appointment Tracker — an n8n workflow that tracks and manages appointments with AI",
+      "Insurance Triage Systems — automated triage of insurance requests",
+      "Voice Agents — built with n8n and Vapi",
+    ],
+    placementProjects: [],
+    skills: ["n8n", "Claude", "GEO", "Voice Agents", "Vapi", "Data Analysis"],
+  },
 ];
 
 export const alumniStats = [
