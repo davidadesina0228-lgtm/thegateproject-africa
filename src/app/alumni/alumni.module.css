@@ -80,3 +80,9 @@ a.company:hover svg { transform: translate(2px, -2px); }
   .closingBottom { flex-direction: column; align-items: start; gap: 28px; margin-top: 28px; }
 }
 @media (prefers-reduced-motion: reduce) { .photo img, .company svg, .projects summary span:last-child { transition: none; } }
+
+/* UI/UX audit: contrast, legibility and touch-target floors. */
+.meta { color: #7a5c24; }
+.skills li { font-size: 12px; }
+.company, .linkedin { min-height: 44px; }
+@media (max-width: 700px) { .eyebrow { font-size: 11px; } }

@@ -203,3 +203,8 @@
   .expandIcon, .portrait img, .portraitArrow, .textLink svg, .pathLink svg, .pathwaysNote a svg { transition: none; }
   .personLink:hover img { transform: none; }
 }
+
+/* UI/UX audit: legibility floors (labels >= 11px, text >= 12px). */
+.portraitLabel, .pathLabel, .project span { font-size: 11px; }
+.tools li, .subjectNumber { font-size: 12px; }
+@media (max-width: 600px) { .eyebrow { font-size: 11px; } }

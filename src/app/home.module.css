@@ -161,3 +161,13 @@
   .heroNote { font-size: 11px; }
 }
 @media (prefers-reduced-motion: reduce) { :global(html):has(.home) { scroll-behavior: auto; } }
+
+/* UI/UX audit: legibility and touch-target floors (labels >= 11px, text >= 12px, targets >= 44px). */
+.wordmark { min-height: 44px; }
+.footerTop nav a { min-width: 44px; justify-content: center; }
+.footerBottom a { min-height: 44px; }
+@media (max-width: 700px) {
+  .eyebrow, .heroContent > .eyebrow, .peopleIntro .eyebrow, .proofIntro .eyebrow, .captionIndex { font-size: 11px; }
+  .navApply { font-size: 12px; }
+  .heroActions .textLink, .heroNote, .footerBottom { font-size: 12px; }
+}

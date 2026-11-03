@@ -79,3 +79,7 @@
 }
 @media (max-width: 360px) { .areas { grid-template-columns: 1fr; } .areaNumber { margin-bottom: 16px; } }
 @media (prefers-reduced-motion: reduce) { .portrait img, .textLink svg, .button, .button svg { transition: none; } .founder:hover .portrait img { transform: none; } }
+
+/* UI/UX audit: legibility floors. */
+.tags li { font-size: 12px; }
+@media (max-width: 700px) { .eyebrow { font-size: 11px; } }

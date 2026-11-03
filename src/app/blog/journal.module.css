@@ -134,3 +134,7 @@
   .featureImage img, .featureRead svg, .articleTop svg, .readLink svg, .button, .button svg { transition: none; }
   .featured:hover .featureImage img { transform: none; }
 }
+
+/* UI/UX audit: legibility floors. */
+.imageCaption, .meta, .featured .meta { font-size: 12px; }
+.tags span { font-size: 12px; }
