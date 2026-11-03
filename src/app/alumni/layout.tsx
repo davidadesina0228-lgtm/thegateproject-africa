@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Cohort 1 Alumni | The Gate Project",
+  title: "Alumni | The Gate Project",
   description:
-    "Meet the 5 Nigerian professionals placed in Western companies by The Gate Project's first cohort. Full project portfolios, placement stories, and the skills that got them hired.",
+    "Meet some of The Gate Project's graduates from Nigeria and Cape Verde. 15+ placements since May, with Cohort 4 starting in January. See what they built and the skills that got them placed.",
   alternates: { canonical: "https://thegateproject.africa/alumni" },
   openGraph: {
-    title: "The Gate Project — Cohort 1 Alumni",
+    title: "The Gate Project — Alumni",
     description:
-      "5 Nigerian graduates. 5 Western placements. All beginners. See exactly what each of them built and where they landed.",
+      "15+ placements since May. Meet some of our graduates and see exactly what each of them built. Cohort 4 begins in January.",
     url: "https://thegateproject.africa/alumni",
     images: [{ url: "https://thegateproject.africa/og-image.jpg", width: 1200, height: 630 }],
   },

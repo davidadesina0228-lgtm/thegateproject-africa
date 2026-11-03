@@ -1,17 +1,9 @@
-"use client";
-
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight, Bot, Globe2, Network, Sparkles } from "lucide-react";
-import { SiteFooter } from "@/components/marketing/SiteFooter";
-import { SiteNav } from "@/components/marketing/SiteNav";
-
-const fadeUp = {
-  initial: { opacity: 0, y: 36 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-};
+import { ArrowUpRight } from "lucide-react";
+import { MarketingShell } from "@/components/marketing/MarketingShell";
+import { Reveal } from "@/components/marketing/HomeMotion";
+import styles from "./about.module.css";
 
 const founders = [
   {
@@ -32,276 +24,101 @@ const founders = [
 ];
 
 const teachingAreas = [
-  {
-    title: "AI Automation",
-    icon: Bot,
-    desc: "Build practical systems that remove repetitive work and turn AI tools into reliable business operations.",
-  },
-  {
-    title: "GEO/AEO",
-    icon: Globe2,
-    desc: "Learn how brands become discoverable in generative search, answer engines, and AI-assisted buying journeys.",
-  },
-  {
-    title: "LinkedIn Authority",
-    icon: Sparkles,
-    desc: "Develop profiles, content, and outreach systems that create trust before the first sales conversation.",
-  },
-  {
-    title: "n8n Workflows",
-    icon: Network,
-    desc: "Design production-ready automations across CRMs, content pipelines, lead systems, and client operations.",
-  },
+  { title: "AI Automation", desc: "Build practical systems that remove repetitive work and turn AI tools into reliable business operations." },
+  { title: "GEO/AEO", desc: "Learn how brands become discoverable in generative search, answer engines, and AI-assisted buying journeys." },
+  { title: "LinkedIn Authority", desc: "Develop profiles, content, and outreach systems that create trust before the first sales conversation." },
+  { title: "n8n Workflows", desc: "Design production-ready automations across CRMs, content pipelines, lead systems, and client operations." },
 ];
 
 const results = [
-  { value: "83%", label: "Placement Rate" },
-  { value: "5 of 6", label: "Graduates Placed" },
-  { value: "3", label: "Countries" },
+  { value: "15+", label: "Placements since May" },
+  { value: "~25", label: "People trained" },
+  { value: "3", label: "Cohorts in 2026" },
 ];
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-background overflow-x-hidden">
-      <SiteNav />
+    <MarketingShell>
+      <section className={`${styles.container} ${styles.hero}`} aria-labelledby="about-heading">
+        <Reveal>
+          <p className={styles.eyebrow}>Our story / Built for African talent</p>
+          <h1 id="about-heading" className={styles.title}>The talent was<br />always <em>here.</em></h1>
+          <div className={styles.heroBottom}>
+            <p className={styles.heroStatement}>We built The Gate<br />to open the door.</p>
+            <p>The missing piece was never ability. It was access, structure, proof, and a direct bridge to companies ready to hire skilled African professionals.</p>
+          </div>
+        </Reveal>
+      </section>
 
-      <section className="relative pt-40 pb-28 px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_0%,rgba(212,175,55,0.11),transparent_65%)]" />
-        <div className="absolute left-1/2 top-20 h-[520px] w-[520px] -translate-x-1/2 rounded-full border border-gold/10" />
-        <div className="absolute left-1/2 top-36 h-[360px] w-[360px] -translate-x-1/2 rounded-full border border-gold/10" />
+      <section className={`${styles.container} ${styles.mission}`} aria-labelledby="mission-heading">
+        <Reveal>
+          <p className={styles.eyebrow}>01 / The mission</p>
+          <h2 id="mission-heading">Train deeply.<br /><em>Connect directly.</em></h2>
+        </Reveal>
+        <Reveal delay={100} className={styles.missionCopy}>
+          <p>The Gate Project is a 6-week AI training and placement programme connecting African professionals with Western companies. Learners build practical skills in AI automation, GEO, LinkedIn authority, and workflow engineering.</p>
+          <p>The programme is built around proof. Participants learn the systems companies need, create deliverables that demonstrate competence, and receive placement support shaped by real hiring needs.</p>
+          <Link href="/#programme" className={styles.textLink}>Explore the programme <ArrowUpRight size={18} aria-hidden="true" /></Link>
+        </Reveal>
+      </section>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div
-            variants={fadeUp}
-            initial="initial"
-            animate="animate"
-            className="max-w-4xl mx-auto text-center"
-          >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-gold/10 border border-gold/25 rounded-full text-gold text-xs font-semibold tracking-widest uppercase mb-8">
-              Built for African talent
-            </span>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black leading-tight tracking-tight mb-8">
-              We Built The Gate Because We Knew The Talent Was There
-            </h1>
-            <p className="text-lg md:text-2xl text-secondary leading-relaxed max-w-3xl mx-auto">
-              The missing piece was never ability. It was access, structure, proof, and a direct bridge
-              to companies ready to hire skilled African professionals.
-            </p>
-          </motion.div>
+      <section id="founders" className={`${styles.container} ${styles.founders}`} aria-labelledby="founders-heading">
+        <Reveal className={styles.sectionHeader}>
+          <div><p className={styles.eyebrow}>02 / The founders</p><h2 id="founders-heading">Experience, shared<br /><em>with purpose.</em></h2></div>
+          <p>Two practitioners building the connection between skill and opportunity.</p>
+        </Reveal>
+        <div className={styles.founderGrid}>
+          {founders.map((founder, index) => (
+            <Reveal key={founder.name} delay={index * 100}>
+              <article className={styles.founder}>
+                <div className={styles.portrait}><Image src={founder.photo} alt={founder.name} fill sizes="(max-width: 700px) 88vw, 40vw" /></div>
+                <div className={styles.founderDetails}>
+                  <h3>{founder.name}</h3>
+                  <p className={styles.role}>{founder.role}</p>
+                  <p className={styles.bio}>{founder.bio}</p>
+                  <ul className={styles.tags} aria-label={`${founder.name}'s teaching areas`}>{founder.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+                  {founder.website && <a href={founder.website} target="_blank" rel="noopener noreferrer" className={styles.textLink}>deanwhitby.com <ArrowUpRight size={18} aria-hidden="true" /></a>}
+                </div>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </section>
 
-      <section className="py-28 px-6 lg:px-8 border-y border-border bg-surface">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-14 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -36 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <span className="text-gold text-xs font-semibold tracking-widest uppercase mb-5 block">
-              The Mission
-            </span>
-            <h2 className="text-4xl md:text-5xl font-black leading-tight mb-8">
-              Train deeply.
-              <br />
-              Place directly.
-            </h2>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 36 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="space-y-6 text-lg text-secondary leading-relaxed"
-          >
-            <p>
-              The Gate Project is a 6-week AI training and placement program connecting
-              African professionals with Western companies. Learners build practical skills in
-              AI automation, GEO, LinkedIn authority, and workflow engineering.
-            </p>
-            <p>
-              The program is built around market proof. Participants learn the systems companies
-              are buying now, create deliverables that demonstrate competence, and enter a placement
-              pipeline designed around real hiring needs.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section id="founders" className="py-32 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center max-w-3xl mx-auto mb-16"
-          >
-            <span className="text-gold text-xs font-semibold tracking-widest uppercase mb-5 block">
-              The Founders
-            </span>
-            <h2 className="text-4xl md:text-5xl font-black leading-tight">
-              Two operators building the bridge between skill and opportunity.
-            </h2>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-2 gap-8">
-            {founders.map((founder, index) => (
-              <motion.article
-                key={founder.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.12, duration: 0.7 }}
-                className="bg-surface border border-border rounded-2xl overflow-hidden hover:border-gold/30 transition-colors"
-              >
-                <div className="relative h-80 bg-background">
-                  <Image
-                    src={founder.photo}
-                    alt={`${founder.name}, ${founder.role}`}
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent" />
-                </div>
-                <div className="p-8 lg:p-10">
-                  <h3 className="text-3xl font-black text-white mb-2">{founder.name}</h3>
-                  <p className="text-gold text-sm font-semibold tracking-wide mb-6">{founder.role}</p>
-                  <p className="text-secondary leading-relaxed mb-7">{founder.bio}</p>
-                  <div className="flex flex-wrap gap-2 mb-7">
-                    {founder.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs font-medium text-secondary bg-background border border-border px-3 py-1 rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  {founder.website && (
-                    <a
-                      href={founder.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-gold hover:text-gold-light text-sm font-bold transition-colors"
-                    >
-                      deanwhitby.com
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
-                  )}
-                </div>
-              </motion.article>
-            ))}
+      <section className={styles.teaching} aria-labelledby="teaching-heading">
+        <div className={styles.container}>
+          <Reveal className={styles.sectionHeader}>
+            <div><p className={styles.eyebrow}>03 / What we teach</p><h2 id="teaching-heading">Useful skills.<br /><em>Real applications.</em></h2></div>
+            <p>Learn through the work. Build systems that solve practical business problems.</p>
+          </Reveal>
+          <div className={styles.areas}>
+            {teachingAreas.map((area, index) => <Reveal key={area.title} delay={index * 70} className={styles.area}><span className={styles.areaNumber}>0{index + 1}</span><h3>{area.title}</h3><p>{area.desc}</p></Reveal>)}
           </div>
         </div>
       </section>
 
-      <section className="py-32 px-6 lg:px-8 bg-surface border-y border-border">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="max-w-3xl mb-14"
-          >
-            <span className="text-gold text-xs font-semibold tracking-widest uppercase mb-5 block">
-              What We Teach
-            </span>
-            <h2 className="text-4xl md:text-5xl font-black leading-tight">
-              Practical AI skills that map to real business demand.
-            </h2>
-          </motion.div>
+      <section className={`${styles.container} ${styles.results}`} aria-labelledby="results-heading">
+        <Reveal className={styles.resultsCopy}>
+          <p className={styles.eyebrow}>04 / The progress</p>
+          <h2 id="results-heading">A growing body<br /><em>of proof.</em></h2>
+          <p>About 25 people have been trained across three cohorts in 2026. Graduates have secured 15+ placements since May in real AI-first roles, with some placed more than once.</p>
+          <Link href="/alumni" className={styles.textLink}>Meet the graduates <ArrowUpRight size={18} aria-hidden="true" /></Link>
+        </Reveal>
+        <Reveal delay={100} className={styles.stats}>
+          {results.map(result => <div key={result.label}><strong>{result.value}</strong><span>{result.label}</span></div>)}
+        </Reveal>
+      </section>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teachingAreas.map((area, index) => (
-              <motion.div
-                key={area.title}
-                initial={{ opacity: 0, y: 26 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08, duration: 0.6 }}
-                className="bg-background border border-border rounded-2xl p-7 hover:border-gold/30 transition-colors"
-              >
-                <div className="w-11 h-11 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center mb-6">
-                  <area.icon className="w-5 h-5 text-gold" />
-                </div>
-                <h3 className="text-white text-lg font-black mb-3">{area.title}</h3>
-                <p className="text-secondary text-sm leading-relaxed">{area.desc}</p>
-              </motion.div>
-            ))}
+      <section className={styles.closing} aria-labelledby="closing-heading">
+        <Reveal className={styles.container}>
+          <p className={styles.eyebrow}>Apply for Cohort 4</p>
+          <h2 id="closing-heading">Make your next move<br /><em>mean something.</em></h2>
+          <div className={styles.closingBottom}>
+            <p>Choose the path that fits where you are now. Build practical skills, real deliverables, and the confidence to pursue international opportunities.</p>
+            <Link href="/apply" className={styles.button}>Apply for a scholarship <ArrowUpRight size={20} aria-hidden="true" /></Link>
           </div>
-        </div>
+        </Reveal>
       </section>
-
-      <section className="py-32 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.85fr_1.15fr] gap-14 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -36 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <span className="text-gold text-xs font-semibold tracking-widest uppercase mb-5 block">
-              The Results
-            </span>
-            <h2 className="text-4xl md:text-5xl font-black leading-tight mb-7">
-              Cohort 1 proved the model.
-            </h2>
-            <p className="text-secondary text-lg leading-relaxed">
-              Six professionals enrolled in the first cohort, which began training on March 2nd, 2025.
-              Five graduated and were placed across three countries in real AI-first roles.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 36 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="grid sm:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border"
-          >
-            {results.map((result) => (
-              <div key={result.label} className="bg-surface px-8 py-10 text-center">
-                <div className="text-4xl md:text-5xl font-black text-gold mb-2">{result.value}</div>
-                <div className="text-white font-semibold text-sm">{result.label}</div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-32 px-6 lg:px-8 bg-surface border-t border-border relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_50%_100%,rgba(212,175,55,0.08),transparent)]" />
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="relative z-10 max-w-4xl mx-auto text-center"
-        >
-          <span className="text-gold text-xs font-semibold tracking-widest uppercase mb-6 block">
-            Apply for Cohort 2
-          </span>
-          <h2 className="text-4xl md:text-6xl font-black leading-tight mb-8">
-            Ready to build proof the market can see?
-          </h2>
-          <p className="text-xl text-secondary max-w-2xl mx-auto mb-10">
-            Choose the path that fits where you are now. The destination is the same:
-            practical skill, real deliverables, and a shot at Western placements.
-          </p>
-          <Link
-            href="/apply"
-            className="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-black font-bold text-lg px-10 py-5 rounded-xl transition-all shadow-2xl shadow-gold/30 hover:shadow-gold/50 hover:-translate-y-0.5"
-          >
-            Apply Now
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-        </motion.div>
-      </section>
-
-      <SiteFooter />
-    </main>
+    </MarketingShell>
   );
 }

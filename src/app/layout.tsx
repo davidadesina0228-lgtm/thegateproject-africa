@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | The Gate Project",
   },
   description:
-    "The Gate Project is a 6-week AI training and placement programme connecting African professionals with Western companies. Cohort 1: 83% placement rate — 5 of 6 graduates placed in Western companies. Apply for Cohort 2.",
+    "The Gate Project is a 6-week AI training and placement programme connecting African professionals with Western companies. 15+ graduate placements since May. Apply for Cohort 4, starting in January.",
   keywords: [
     "African AI talent",
     "AI training programme Africa",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "The Gate Project",
     title: "The Gate Project | Africa's AI Talent Pipeline",
     description:
-      "6 weeks. Real AI skills. 83% placement rate — 5 of 6 graduates placed. The Gate Project trains African professionals and places them in Western companies.",
+      "6 weeks. Real AI skills. 15+ placements since May. The Gate Project trains African professionals and places them in Western companies.",
     images: [
       {
         url: "/og-image.jpg",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Gate Project | Africa's AI Talent Pipeline",
     description:
-      "6 weeks. Real AI skills. 83% placement rate. Train here. Work anywhere.",
+      "6 weeks. Real AI skills. 15+ placements since May. Train here. Work anywhere.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -81,7 +81,7 @@ const jsonLd = {
   name: "The Gate Project",
   url: "https://thegateproject.africa",
   description:
-    "The Gate Project is a 6-week AI talent development and placement programme that connects African professionals with Western companies. Cohort 1 achieved an 83% placement rate — 5 of 6 graduates placed in paid remote roles. Founded by David Adesina and Dean Whitby.",
+    "The Gate Project is a 6-week AI talent development and placement programme that connects African professionals with Western companies. Graduates have secured 15+ placements since May, including remote roles with Western companies. Founded by David Adesina and Dean Whitby.",
   foundingDate: "2025",
   founders: [
     {

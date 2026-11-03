@@ -1,0 +1,136 @@
+.journal { color: var(--home-ink); background: var(--home-paper); }
+.container { width: min(88%, 1280px); margin-inline: auto; }
+.hero { padding-block: 88px 64px; }
+.eyebrow { font-size: 11px; font-weight: 500; line-height: 1.6; letter-spacing: .14em; text-transform: uppercase; color: var(--home-muted); }
+.hero h1 { max-width: 1000px; font-size: clamp(3rem, 6.3vw, 6rem); font-weight: 500; line-height: 1.03; letter-spacing: -.065em; margin-block: 28px; }
+.journal em { font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -.045em; }
+.lead { max-width: 640px; font-size: 16px; line-height: 1.8; color: var(--home-muted); }
+.featured { display: grid; grid-template-columns: .85fr 1.15fr; background: var(--home-ink); color: var(--home-paper); }
+.featureImage { position: relative; min-height: 560px; background: #40433d; overflow: hidden; }
+.featureImage img { object-fit: cover; object-position: center 30%; filter: grayscale(1); transition: transform 700ms ease; }
+.featured:hover .featureImage img { transform: scale(1.025); }
+.imageCaption { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 24px; background: var(--home-ink); color: #d8dace; font-size: 11px; letter-spacing: .04em; }
+.featureCopy { padding: 48px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.featureCopy > .eyebrow { color: #cfb47b; margin-bottom: 28px; }
+.journal .featureCopy h2 { font-size: clamp(28px, 3vw, 44px); line-height: 1.14; letter-spacing: -.045em; font-weight: 500; margin: 24px 0; }
+.featureCopy > p:not(.eyebrow) { color: #c1c5b9; font-size: 14px; line-height: 1.8; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 11px; font-weight: 500; line-height: 1.7; color: #80622b; }
+.tags > span { border-bottom: 1px solid var(--home-line); padding-bottom: 4px; }
+.featured .tags { color: #d7bd83; }
+.featured .tags > span { border-bottom-color: #55594f; }
+.meta { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; font-size: 11px; line-height: 1.7; color: var(--home-muted); }
+.meta > span, .meta > time { display: inline-flex; align-items: center; gap: 6px; }
+.featureCopy .meta { color: #c1c5b9; margin-top: 28px; }
+.featureRead { display: flex; align-items: center; justify-content: space-between; gap: 24px; width: 100%; border-bottom: 1px solid #8e815f; padding: 20px 0 12px; margin-top: 20px; font-size: 13px; }
+.featureRead svg, .articleTop svg, .readLink svg, .button svg { flex-shrink: 0; transition: transform 200ms ease; }
+.featured:hover .featureRead svg, .articleLink:hover .articleTop svg, .articleLink:hover .readLink svg, .button:hover svg { transform: translate(2px, -2px); }
+.articles { padding-block: 88px 104px; }
+.sectionLabel { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
+.journal .sectionLabel h2 { font-size: 19px; line-height: 1.4; letter-spacing: -.025em; font-weight: 500; }
+.sectionLabel > span { font-size: 12px; color: var(--home-muted); }
+.articleGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 64px; }
+.articleGrid > div { height: 100%; }
+.articleLink { height: 100%; display: flex; flex-direction: column; border-top: 1px solid var(--home-line); padding-top: 24px; }
+.articleTop { display: flex; align-items: center; justify-content: space-between; color: var(--home-muted); margin-bottom: 24px; }
+.articleNumber { font-size: 12px; font-variant-numeric: tabular-nums; }
+.articleLink h3 { font-size: clamp(22px, 2.2vw, 31px); font-weight: 500; line-height: 1.25; letter-spacing: -.035em; margin: 24px 0 16px; }
+.articleLink > p { font-size: 14px; line-height: 1.8; color: var(--home-muted); margin-bottom: 28px; }
+.articleLink .meta { margin-top: auto; }
+.articleLink:hover h3 { color: #80622b; }
+.callToAction { background: #e7e4d9; padding-block: 80px; border-top: 1px solid var(--home-line); }
+.journal .callToAction h2 { font-size: clamp(36px, 4.8vw, 64px); font-weight: 500; line-height: 1.08; letter-spacing: -.05em; margin-top: 24px; }
+.ctaBottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-top: 32px; }
+.ctaBottom > p { font-size: 14px; line-height: 1.8; max-width: 500px; color: var(--home-muted); }
+.button { display: inline-flex; align-items: center; justify-content: space-between; min-height: 52px; gap: 32px; padding: 16px 24px; background: var(--home-ink); color: var(--home-paper); font-size: 13px; font-weight: 500; flex-shrink: 0; transition: background 200ms; }
+.button:hover { background: #3c4136; }
+.readingWidth { width: min(88%, 740px); margin-inline: auto; }
+.postHero { border-bottom: 1px solid var(--home-line); padding-block: 64px 48px; }
+.backLink { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 12px; color: var(--home-muted); }
+.backLink:hover { color: var(--home-ink); }
+.postHero .backLink { margin-bottom: 32px; }
+.postHero h1 { font-size: clamp(36px, 4.5vw, 62px); font-weight: 500; line-height: 1.1; letter-spacing: -.05em; margin: 24px 0; text-wrap: balance; }
+.postExcerpt { font-size: 17px; line-height: 1.8; color: var(--home-muted); }
+.byline { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--home-line); }
+.byline > div:first-child { display: flex; flex-direction: column; gap: 5px; }
+.byline strong { font-size: 13px; font-weight: 500; }
+.byline > div:first-child > span { font-size: 11px; color: var(--home-muted); }
+.postBody { padding-block: 56px 64px; overflow-wrap: anywhere; }
+.journal .postBody p, .journal .postBody li, .journal .postBody dd { font-size: 17px; line-height: 1.9; color: #4f5349; }
+.journal .postBody p { margin-bottom: 24px; }
+.journal .postBody strong, .journal .postBody li strong { color: var(--home-ink); font-weight: 600; }
+.journal .postBody h2 { font-size: clamp(27px, 3vw, 36px); font-weight: 500; line-height: 1.25; letter-spacing: -.035em; color: var(--home-ink); margin: 56px 0 24px; }
+.journal .postBody h3 { font-size: 23px; font-weight: 500; line-height: 1.3; letter-spacing: -.025em; color: var(--home-ink); margin: 40px 0 20px; }
+.journal .postBody ul { gap: 12px; margin-bottom: 28px; }
+.journal .postBody ul li { padding-left: 24px; }
+.journal .postBody ul li::before { top: .85em; width: 5px; height: 5px; border-radius: 0; background: #927331; }
+.journal .postBody ol { list-style: decimal; padding-left: 24px; margin: 0 0 28px; }
+.journal .postBody ol li { padding-left: 8px; margin-bottom: 12px; }
+.journal .postBody ol li::marker { color: #80622b; font-size: .85em; font-weight: 600; }
+.journal .postBody dt { color: var(--home-ink); font-size: 19px; line-height: 1.4; font-weight: 500; margin-bottom: 10px; }
+.journal .postBody dd { padding-left: 20px; border-left-color: var(--home-line); }
+.journal .postBody a { color: #755720; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #bcb49f; }
+.journal .postBody a:hover { text-decoration-color: currentColor; }
+.journal .postBody blockquote { margin-block: 32px; padding: 24px 32px; border-left: 2px solid var(--home-gold); background: #eae7dc; font-family: Georgia, serif; font-style: italic; }
+.journal .postBody blockquote p:last-child { margin-bottom: 0; }
+.journal .postBody pre { max-width: 100%; overflow-x: auto; background: #eae7dc; border: 1px solid var(--home-line); padding: 24px; }
+.journal .postBody code { font-size: .85em; }
+.articleCta { padding: 40px; background: #e7e4d9; border-top: 1px solid var(--home-line); }
+.journal .articleCta h2 { font-size: 40px; font-weight: 500; line-height: 1.12; letter-spacing: -.045em; margin-block: 24px; }
+.articleCta > p:not(.eyebrow) { font-size: 14px; line-height: 1.8; color: var(--home-muted); margin-bottom: 28px; }
+.related { padding-block: 64px 88px; }
+.relatedGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.relatedGrid .articleLink h3 { font-size: 23px; }
+.readLink { display: inline-flex; align-items: center; gap: 16px; margin-top: auto; min-height: 44px; font-size: 12px; }
+.journal a:focus-visible { outline: 2px solid #927331; outline-offset: 6px; }
+.featured:focus-visible { outline-offset: 8px; }
+@media (max-width: 1000px) {
+  .hero { padding-top: 64px; }
+  .featured { grid-template-columns: .8fr 1.2fr; }
+  .featureImage { min-height: 560px; }
+  .featureCopy { padding: 32px; }
+  .articleGrid { gap: 40px; }
+}
+@media (max-width: 700px) {
+  .hero { padding-block: 48px; }
+  .hero h1 { font-size: clamp(36px, 8vw, 52px); margin-block: 24px; }
+  .lead { font-size: 14px; }
+  .featured { grid-template-columns: 1fr; }
+  .featureImage { min-height: 0; height: 340px; }
+  .featureImage img { object-position: center 28%; }
+  .featureCopy { padding: 28px; }
+  .journal .featureCopy h2 { font-size: 29px; }
+  .featured .meta { font-size: 11px; }
+  .imageCaption { padding: 16px 24px; }
+  .articles { padding-block: 56px 64px; }
+  .articleGrid { grid-template-columns: 1fr; gap: 40px; }
+  .journal .sectionLabel h2 { font-size: 17px; }
+  .sectionLabel > span { font-size: 11px; }
+  .articleLink h3 { font-size: 26px; }
+  .callToAction { padding-block: 56px; }
+  .ctaBottom { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .postHero { padding-block: 36px 40px; }
+  .postHero .backLink { margin-bottom: 24px; }
+  .postHero h1 { font-size: clamp(33px, 7vw, 46px); text-wrap: pretty; }
+  .postExcerpt { font-size: 15px; }
+  .byline { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .postBody { padding-block: 40px; }
+  .journal .postBody p, .journal .postBody li, .journal .postBody dd { font-size: 16px; line-height: 1.85; }
+  .journal .postBody h2 { font-size: 28px; margin-top: 40px; }
+  .journal .postBody h3 { font-size: 22px; }
+  .journal .postBody blockquote { padding: 20px; }
+  .articleCta { padding: 28px; }
+  .journal .articleCta h2 { font-size: 34px; }
+  .related { padding-block: 48px 64px; }
+  .relatedGrid { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 360px) {
+  .featureCopy { padding: 24px; }
+  .journal .featureCopy h2 { font-size: 26px; }
+  .featureImage { height: 290px; }
+  .sectionLabel { gap: 16px; }
+  .sectionLabel > span { white-space: nowrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .featureImage img, .featureRead svg, .articleTop svg, .readLink svg, .button, .button svg { transition: none; }
+  .featured:hover .featureImage img { transform: none; }
+}

@@ -1,0 +1,5 @@
+.reveal { opacity: 1; transform: translateY(0); transition: opacity 700ms ease var(--reveal-delay, 0ms), transform 700ms cubic-bezier(.2,.65,.3,1) var(--reveal-delay, 0ms); }
+.reveal[data-waiting="true"] { opacity: 0; transform: translateY(28px); }
+.reveal:focus-within { opacity: 1; transform: none; transition: none; }
+@media (prefers-reduced-motion: reduce) { .reveal, .reveal[data-waiting="true"] { opacity: 1; transform: none; transition: none; } }
+@media print { .reveal[data-waiting="true"] { opacity: 1; transform: none; } }

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Apply | The Gate Project — Free Scholarship & Paid Mentorship",
   description:
-    "Apply for The Gate Project's free AI scholarship (Cohort 2) or join the $100 paid mentorship track. Join the Telegram group, pass a short interview, and start your journey to a Western remote role.",
+    "Apply for The Gate Project's free AI scholarship (Cohort 4, starting in January) or join the $100 paid mentorship track. Join the Telegram group, pass a short interview, and start your journey to a Western remote role.",
   alternates: { canonical: "https://thegateproject.africa/apply" },
   openGraph: {
     title: "Apply for The Gate Project",

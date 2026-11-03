@@ -1,75 +1,29 @@
-"use client";
-
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
-
-const programmeLinks = [
-  ["Learner Path", "/apply?track=learner"],
-  ["Intern Path", "/apply?track=intern"],
-  ["Paid Mentorship", "/apply#paid-mentorship"],
-  ["Alumni", "/alumni"],
-  ["Blog", "/blog"],
-];
-
-const companyLinks = [
-  ["About", "/about"],
-  ["The Founders", "/about#founders"],
-  ["Contact", "/contact"],
-  ["Privacy Policy", "/privacy"],
-];
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import styles from "@/app/home.module.css";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border py-20 px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
-          <div className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-6">
-              <Image src="/nav-logo.png" alt="The Gate Project" width={36} height={36} className="rounded-lg" />
-              <span className="text-white font-bold text-lg">The Gate Project</span>
-            </Link>
-            <p className="text-secondary text-sm leading-relaxed max-w-xs mb-6">
-              Africa&apos;s premier AI talent pipeline. 6 weeks. Real skills.
-              Real placements. No gatekeepers.
-            </p>
-            <p className="text-secondary/60 text-xs">thegateproject.africa</p>
-          </div>
-
-          <div>
-            <h4 className="text-white font-bold text-sm mb-5">Programme</h4>
-            <ul className="space-y-3">
-              {programmeLinks.map(([label, href]) => (
-                <li key={label}>
-                  <Link href={href} className="text-secondary hover:text-white text-sm transition-colors">
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-bold text-sm mb-5">Company</h4>
-            <ul className="space-y-3">
-              {companyLinks.map(([label, href]) => (
-                <li key={label}>
-                  <Link href={href} className="text-secondary hover:text-white text-sm transition-colors">
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-secondary/60 text-xs">
-            &copy; {new Date().getFullYear()} The Gate Project. All rights reserved.
-          </p>
-          <p className="text-secondary/60 text-xs">
-            Built for Africa. Trusted by the World.
-          </p>
-        </div>
+    <footer className={styles.footer}>
+      <div className={styles.footerTop}>
+        <Link href="/" className={styles.wordmark} aria-label="The Gate Project home">
+          <Image src="/nav-logo.png" alt="" width={44} height={44} />
+          <span>The Gate<br />Project<span className={styles.wordmarkDot}>.</span></span>
+        </Link>
+        <p>Built for Africa.<br />Open to the world.</p>
+        <nav aria-label="Footer navigation">
+          <Link href="/about">Our story</Link>
+          <Link href="/alumni">Alumni</Link>
+          <Link href="/blog">Journal</Link>
+          <Link href="/apply#paid-mentorship">Mentorship</Link>
+          <Link href="/auth/login">Sign in <ArrowUpRight size={14} aria-hidden="true" /></Link>
+        </nav>
+      </div>
+      <div className={styles.footerBottom}>
+        <span>© {new Date().getFullYear()} The Gate Project</span>
+        <a href="https://t.me/Thegateprojectafrica" target="_blank" rel="noopener noreferrer">Join our Telegram community <ArrowRight size={14} aria-hidden="true" /></a>
+        <span>Talent is everywhere. Let’s open doors.</span>
       </div>
     </footer>
   );
